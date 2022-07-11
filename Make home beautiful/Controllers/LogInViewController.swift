@@ -8,15 +8,14 @@
 import UIKit
 
 class LogInViewController: UIViewController {
-    @IBOutlet weak var listView: UIView!
+
+    @IBOutlet weak var centralUIView: UIView!
+    @IBOutlet weak var logInButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        listView.layer.masksToBounds = false
-        listView.layer.shadowColor = UIColor.black.cgColor
-        listView.layer.shadowOpacity = 0.1
-        listView.layer.shadowOffset = .init(width: 0, height: 10)
-        listView.layer.shadowRadius = 20
+        DesignTemplate.addShadow(object: centralUIView) // Добавляем тень для
+        DesignTemplate.addShadow(object: logInButton) // Добавляем тень для кнопки "Войти"
     }
 
 

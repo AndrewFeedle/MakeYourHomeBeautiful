@@ -14,6 +14,7 @@
 		ACEFC4B7287B022D00FB0B01 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACEFC4B5287B022D00FB0B01 /* LaunchScreen.storyboard */; };
 		ACEFC4C6287B0A4900FB0B01 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEFC4C5287B0A4900FB0B01 /* Box.swift */; };
 		ACEFC4FC287B15CD00FB0B01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACEFC4C2287B09D500FB0B01 /* Assets.xcassets */; };
+		ACEFC4FF287CB73200FB0B01 /* DesignTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEFC4FE287CB73100FB0B01 /* DesignTemplate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		ACEFC4B8287B022D00FB0B01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ACEFC4C2287B09D500FB0B01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../Downloads/AppIcons/Assets.xcassets; sourceTree = "<group>"; };
 		ACEFC4C5287B0A4900FB0B01 /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
+		ACEFC4FE287CB73100FB0B01 /* DesignTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignTemplate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				ACEFC4C5287B0A4900FB0B01 /* Box.swift */,
+				ACEFC4FE287CB73100FB0B01 /* DesignTemplate.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACEFC4AF287B022900FB0B01 /* LogInViewController.swift in Sources */,
+				ACEFC4FF287CB73200FB0B01 /* DesignTemplate.swift in Sources */,
 				ACEFC4C6287B0A4900FB0B01 /* Box.swift in Sources */,
 				ACEFC4AB287B022900FB0B01 /* AppDelegate.swift in Sources */,
 				ACEFC4AD287B022900FB0B01 /* SceneDelegate.swift in Sources */,
