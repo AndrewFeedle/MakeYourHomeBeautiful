@@ -1,0 +1,27 @@
+
+/* Class = "UIButton"; configuration.title = "Войти"; ObjectID = "55V-5P-fDN"; */
+"55V-5P-fDN.configuration.title" = "Войти";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "55V-5P-fDN"; */
+"55V-5P-fDN.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Почта"; ObjectID = "7Gy-01-3zS"; */
+"7Gy-01-3zS.text" = "Почта";
+
+/* Class = "UILabel"; text = "Привет!"; ObjectID = "812-0y-YQ7"; */
+"812-0y-YQ7.text" = "Привет!";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "9fs-tZ-XsN"; */
+"9fs-tZ-XsN.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "С ВОЗВРАЩЕНИЕМ"; ObjectID = "YwM-xt-4Ru"; */
+"YwM-xt-4Ru.text" = "С ВОЗВРАЩЕНИЕМ";
+
+/* Class = "UIButton"; configuration.title = "Зарегистрироваться"; ObjectID = "qZ3-E7-Zyt"; */
+"qZ3-E7-Zyt.configuration.title" = "Зарегистрироваться";
+
+/* Class = "UILabel"; text = "Пароль"; ObjectID = "sZn-bf-Ndf"; */
+"sZn-bf-Ndf.text" = "Пароль";
+
+/* Class = "UIButton"; configuration.title = "Забыли пароль"; ObjectID = "tYR-zN-RZP"; */
+"tYR-zN-RZP.configuration.title" = "Забыли пароль";
