@@ -15,6 +15,8 @@
 		ACEFC4C6287B0A4900FB0B01 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEFC4C5287B0A4900FB0B01 /* Box.swift */; };
 		ACEFC4FC287B15CD00FB0B01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACEFC4C2287B09D500FB0B01 /* Assets.xcassets */; };
 		ACEFC4FF287CB73200FB0B01 /* DesignTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEFC4FE287CB73100FB0B01 /* DesignTemplate.swift */; };
+		ACEFC506287F57E400FB0B01 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEFC505287F57E400FB0B01 /* ForgotPasswordViewController.swift */; };
+		ACEFC509287F588500FB0B01 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEFC508287F588500FB0B01 /* RegistrationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		ACEFC4FE287CB73100FB0B01 /* DesignTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignTemplate.swift; sourceTree = "<group>"; };
 		ACEFC500287CBAA100FB0B01 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		ACEFC501287CBAA100FB0B01 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		ACEFC505287F57E400FB0B01 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		ACEFC508287F588500FB0B01 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,10 +66,7 @@
 		ACEFC4A9287B022900FB0B01 /* Make home beautiful */ = {
 			isa = PBXGroup;
 			children = (
-				ACEFC4C0287B06EA00FB0B01 /* Models */,
-				ACEFC4BE287B068300FB0B01 /* Views */,
-				ACEFC4C1287B06FF00FB0B01 /* View models */,
-				ACEFC4BF287B06D000FB0B01 /* Controllers */,
+				ACEFC502287F570F00FB0B01 /* Screens */,
 				ACEFC4C4287B0A3000FB0B01 /* Utilities */,
 				ACEFC4AA287B022900FB0B01 /* AppDelegate.swift */,
 				ACEFC4AC287B022900FB0B01 /* SceneDelegate.swift */,
@@ -84,28 +85,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		ACEFC4BF287B06D000FB0B01 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				ACEFC4AE287B022900FB0B01 /* LogInViewController.swift */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		ACEFC4C0287B06EA00FB0B01 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		ACEFC4C1287B06FF00FB0B01 /* View models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "View models";
-			sourceTree = "<group>";
-		};
 		ACEFC4C4287B0A3000FB0B01 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +92,41 @@
 				ACEFC4FE287CB73100FB0B01 /* DesignTemplate.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		ACEFC502287F570F00FB0B01 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				ACEFC507287F583900FB0B01 /* Registration */,
+				ACEFC503287F576D00FB0B01 /* Log in */,
+				ACEFC504287F579900FB0B01 /* Forgot password */,
+				ACEFC4BE287B068300FB0B01 /* Views */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		ACEFC503287F576D00FB0B01 /* Log in */ = {
+			isa = PBXGroup;
+			children = (
+				ACEFC4AE287B022900FB0B01 /* LogInViewController.swift */,
+			);
+			path = "Log in";
+			sourceTree = "<group>";
+		};
+		ACEFC504287F579900FB0B01 /* Forgot password */ = {
+			isa = PBXGroup;
+			children = (
+				ACEFC505287F57E400FB0B01 /* ForgotPasswordViewController.swift */,
+			);
+			path = "Forgot password";
+			sourceTree = "<group>";
+		};
+		ACEFC507287F583900FB0B01 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				ACEFC508287F588500FB0B01 /* RegistrationViewController.swift */,
+			);
+			path = Registration;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,7 +203,9 @@
 			files = (
 				ACEFC4AF287B022900FB0B01 /* LogInViewController.swift in Sources */,
 				ACEFC4FF287CB73200FB0B01 /* DesignTemplate.swift in Sources */,
+				ACEFC506287F57E400FB0B01 /* ForgotPasswordViewController.swift in Sources */,
 				ACEFC4C6287B0A4900FB0B01 /* Box.swift in Sources */,
+				ACEFC509287F588500FB0B01 /* RegistrationViewController.swift in Sources */,
 				ACEFC4AB287B022900FB0B01 /* AppDelegate.swift in Sources */,
 				ACEFC4AD287B022900FB0B01 /* SceneDelegate.swift in Sources */,
 			);
