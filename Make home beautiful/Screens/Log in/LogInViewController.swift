@@ -9,6 +9,9 @@ import UIKit
 
 class LogInViewController: UIViewController {
 
+    @IBOutlet weak var emailDivider: UIView!
+    @IBOutlet weak var passwordDivider: UIView!
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var centralUIView: UIView!
@@ -20,6 +23,32 @@ class LogInViewController: UIViewController {
         emailTextField.delegate = self
         DesignTemplate.addShadow(object: centralUIView) // Добавляем тень для
         DesignTemplate.addShadow(object: logInButton) // Добавляем тень для кнопки "Войти"
+        //Добавляет наблюдателя за появлением клавиатуры
+        NotificationCenter.default.addObserver(self,selector: #selector(keyboardWillShow(notification:)),name: UIResponder.keyboardWillShowNotification, object: nil)
+        //Добавляет наблюдателя за скрытием клавиатуры
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)),name: UIResponder.keyboardWillHideNotification,object: nil)
+    }
+    
+    //При закрытии формы
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self)
+    }
+
+    // При появлении клавиатуры
+    @objc func keyboardWillShow(notification: NSNotification) {
+        let userInfo: NSDictionary = notification.userInfo! as NSDictionary
+        let keyboardInfo = userInfo[UIResponder.keyboardFrameBeginUserInfoKey] as! NSValue
+        let keyboardSize = keyboardInfo.cgRectValue.size
+        let contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize.height + 10, right: 0)
+        scrollView.contentInset = contentInsets
+        scrollView.scrollIndicatorInsets = contentInsets
+    }
+
+    // При скрытии клавиатуры
+    @objc func keyboardWillHide(notification: NSNotification) {
+        scrollView.contentInset = .zero
+        scrollView.scrollIndicatorInsets = .zero
     }
     
     // Нажатие на кнопку "Войти"
@@ -41,6 +70,7 @@ class LogInViewController: UIViewController {
 
 //MARK: - Обработка полей ввода
 extension LogInViewController: UITextFieldDelegate{
+    //При нажатии на клавиатуре кнопки return
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if emailTextField.isFirstResponder{
             passwordTextField.becomeFirstResponder()
@@ -50,5 +80,33 @@ extension LogInViewController: UITextFieldDelegate{
             loginButtonPressed(logInButton)
         }
         return true
+    }
+    
+    // Когда текстовое поле начали редактировать
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if emailTextField.isEditing{
+            UIView.animate(withDuration: 0.3) {
+                self.emailDivider.backgroundColor = UIColor.label
+            }
+        }
+        else{
+            UIView.animate(withDuration: 0.3) {
+                self.passwordDivider.backgroundColor = UIColor.label
+            }
+        }
+    }
+    
+    // Когда текстовое поле закончили редактировать
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if !emailTextField.isEditing{
+            UIView.animate(withDuration: 0.3) {
+                self.emailDivider.backgroundColor = UIColor.lightGray
+            }
+        }
+        if !passwordTextField.isEditing{
+            UIView.animate(withDuration: 0.3) {
+                self.passwordDivider.backgroundColor = UIColor.lightGray
+            }
+        }
     }
 }

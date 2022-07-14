@@ -17,6 +17,7 @@
 		ACEFC4FF287CB73200FB0B01 /* DesignTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEFC4FE287CB73100FB0B01 /* DesignTemplate.swift */; };
 		ACEFC506287F57E400FB0B01 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEFC505287F57E400FB0B01 /* ForgotPasswordViewController.swift */; };
 		ACEFC509287F588500FB0B01 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEFC508287F588500FB0B01 /* RegistrationViewController.swift */; };
+		ACEFC50C2880AE6D00FB0B01 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEFC50B2880AE6C00FB0B01 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		ACEFC501287CBAA100FB0B01 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		ACEFC505287F57E400FB0B01 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		ACEFC508287F588500FB0B01 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		ACEFC50B2880AE6C00FB0B01 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,21 +70,14 @@
 			children = (
 				ACEFC502287F570F00FB0B01 /* Screens */,
 				ACEFC4C4287B0A3000FB0B01 /* Utilities */,
+				ACEFC4B0287B022900FB0B01 /* Main.storyboard */,
+				ACEFC4B5287B022D00FB0B01 /* LaunchScreen.storyboard */,
 				ACEFC4AA287B022900FB0B01 /* AppDelegate.swift */,
 				ACEFC4AC287B022900FB0B01 /* SceneDelegate.swift */,
 				ACEFC4C2287B09D500FB0B01 /* Assets.xcassets */,
 				ACEFC4B8287B022D00FB0B01 /* Info.plist */,
 			);
 			path = "Make home beautiful";
-			sourceTree = "<group>";
-		};
-		ACEFC4BE287B068300FB0B01 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				ACEFC4B0287B022900FB0B01 /* Main.storyboard */,
-				ACEFC4B5287B022D00FB0B01 /* LaunchScreen.storyboard */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		ACEFC4C4287B0A3000FB0B01 /* Utilities */ = {
@@ -97,10 +92,10 @@
 		ACEFC502287F570F00FB0B01 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				ACEFC50A2880AE5800FB0B01 /* Home */,
 				ACEFC507287F583900FB0B01 /* Registration */,
 				ACEFC503287F576D00FB0B01 /* Log in */,
 				ACEFC504287F579900FB0B01 /* Forgot password */,
-				ACEFC4BE287B068300FB0B01 /* Views */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -127,6 +122,14 @@
 				ACEFC508287F588500FB0B01 /* RegistrationViewController.swift */,
 			);
 			path = Registration;
+			sourceTree = "<group>";
+		};
+		ACEFC50A2880AE5800FB0B01 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				ACEFC50B2880AE6C00FB0B01 /* HomeViewController.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,6 +207,7 @@
 				ACEFC4AF287B022900FB0B01 /* LogInViewController.swift in Sources */,
 				ACEFC4FF287CB73200FB0B01 /* DesignTemplate.swift in Sources */,
 				ACEFC506287F57E400FB0B01 /* ForgotPasswordViewController.swift in Sources */,
+				ACEFC50C2880AE6D00FB0B01 /* HomeViewController.swift in Sources */,
 				ACEFC4C6287B0A4900FB0B01 /* Box.swift in Sources */,
 				ACEFC509287F588500FB0B01 /* RegistrationViewController.swift in Sources */,
 				ACEFC4AB287B022900FB0B01 /* AppDelegate.swift in Sources */,
@@ -287,7 +291,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -343,7 +347,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
