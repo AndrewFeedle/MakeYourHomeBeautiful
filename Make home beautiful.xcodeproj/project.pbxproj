@@ -12,12 +12,17 @@
 		ACEFC4AF287B022900FB0B01 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEFC4AE287B022900FB0B01 /* LogInViewController.swift */; };
 		ACEFC4B2287B022900FB0B01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACEFC4B0287B022900FB0B01 /* Main.storyboard */; };
 		ACEFC4B7287B022D00FB0B01 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACEFC4B5287B022D00FB0B01 /* LaunchScreen.storyboard */; };
-		ACEFC4C6287B0A4900FB0B01 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEFC4C5287B0A4900FB0B01 /* Box.swift */; };
 		ACEFC4FC287B15CD00FB0B01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACEFC4C2287B09D500FB0B01 /* Assets.xcassets */; };
 		ACEFC4FF287CB73200FB0B01 /* DesignTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEFC4FE287CB73100FB0B01 /* DesignTemplate.swift */; };
 		ACEFC506287F57E400FB0B01 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEFC505287F57E400FB0B01 /* ForgotPasswordViewController.swift */; };
 		ACEFC509287F588500FB0B01 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEFC508287F588500FB0B01 /* RegistrationViewController.swift */; };
 		ACEFC50C2880AE6D00FB0B01 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEFC50B2880AE6C00FB0B01 /* HomeViewController.swift */; };
+		ACEFC50E2881EE5E00FB0B01 /* LogInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEFC50D2881EE5D00FB0B01 /* LogInViewModel.swift */; };
+		ACEFC5102882061E00FB0B01 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ACEFC50F2882061E00FB0B01 /* GoogleService-Info.plist */; };
+		ACEFC5132882097000FB0B01 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = ACEFC5122882097000FB0B01 /* FirebaseAuth */; };
+		ACEFC5152882097000FB0B01 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = ACEFC5142882097000FB0B01 /* FirebaseFirestore */; };
+		ACEFC51728820A4E00FB0B01 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEFC51628820A4E00FB0B01 /* FirebaseManager.swift */; };
+		ACEFC51E288215F000FB0B01 /* LoginAlertDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEFC51D288215F000FB0B01 /* LoginAlertDictionary.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,13 +34,16 @@
 		ACEFC4B6287B022D00FB0B01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ACEFC4B8287B022D00FB0B01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ACEFC4C2287B09D500FB0B01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../Downloads/AppIcons/Assets.xcassets; sourceTree = "<group>"; };
-		ACEFC4C5287B0A4900FB0B01 /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 		ACEFC4FE287CB73100FB0B01 /* DesignTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignTemplate.swift; sourceTree = "<group>"; };
 		ACEFC500287CBAA100FB0B01 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		ACEFC501287CBAA100FB0B01 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		ACEFC505287F57E400FB0B01 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		ACEFC508287F588500FB0B01 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		ACEFC50B2880AE6C00FB0B01 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		ACEFC50D2881EE5D00FB0B01 /* LogInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewModel.swift; sourceTree = "<group>"; };
+		ACEFC50F2882061E00FB0B01 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		ACEFC51628820A4E00FB0B01 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		ACEFC51D288215F000FB0B01 /* LoginAlertDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAlertDictionary.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +51,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACEFC5132882097000FB0B01 /* FirebaseAuth in Frameworks */,
+				ACEFC5152882097000FB0B01 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				ACEFC502287F570F00FB0B01 /* Screens */,
+				ACEFC51828820D1300FB0B01 /* Common */,
 				ACEFC4C4287B0A3000FB0B01 /* Utilities */,
 				ACEFC4B0287B022900FB0B01 /* Main.storyboard */,
 				ACEFC4B5287B022D00FB0B01 /* LaunchScreen.storyboard */,
@@ -76,6 +87,7 @@
 				ACEFC4AC287B022900FB0B01 /* SceneDelegate.swift */,
 				ACEFC4C2287B09D500FB0B01 /* Assets.xcassets */,
 				ACEFC4B8287B022D00FB0B01 /* Info.plist */,
+				ACEFC50F2882061E00FB0B01 /* GoogleService-Info.plist */,
 			);
 			path = "Make home beautiful";
 			sourceTree = "<group>";
@@ -83,8 +95,7 @@
 		ACEFC4C4287B0A3000FB0B01 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				ACEFC4C5287B0A4900FB0B01 /* Box.swift */,
-				ACEFC4FE287CB73100FB0B01 /* DesignTemplate.swift */,
+				ACEFC51628820A4E00FB0B01 /* FirebaseManager.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -104,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				ACEFC4AE287B022900FB0B01 /* LogInViewController.swift */,
+				ACEFC50D2881EE5D00FB0B01 /* LogInViewModel.swift */,
 			);
 			path = "Log in";
 			sourceTree = "<group>";
@@ -132,6 +144,15 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		ACEFC51828820D1300FB0B01 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				ACEFC4FE287CB73100FB0B01 /* DesignTemplate.swift */,
+				ACEFC51D288215F000FB0B01 /* LoginAlertDictionary.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -148,6 +169,10 @@
 			dependencies = (
 			);
 			name = "Make home beautiful";
+			packageProductDependencies = (
+				ACEFC5122882097000FB0B01 /* FirebaseAuth */,
+				ACEFC5142882097000FB0B01 /* FirebaseFirestore */,
+			);
 			productName = "Make home beautiful";
 			productReference = ACEFC4A7287B022900FB0B01 /* Make home beautiful.app */;
 			productType = "com.apple.product-type.application";
@@ -177,6 +202,9 @@
 				ru,
 			);
 			mainGroup = ACEFC49E287B022900FB0B01;
+			packageReferences = (
+				ACEFC5112882097000FB0B01 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = ACEFC4A8287B022900FB0B01 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -194,6 +222,7 @@
 				ACEFC4B7287B022D00FB0B01 /* LaunchScreen.storyboard in Resources */,
 				ACEFC4FC287B15CD00FB0B01 /* Assets.xcassets in Resources */,
 				ACEFC4B2287B022900FB0B01 /* Main.storyboard in Resources */,
+				ACEFC5102882061E00FB0B01 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,10 +235,12 @@
 			files = (
 				ACEFC4AF287B022900FB0B01 /* LogInViewController.swift in Sources */,
 				ACEFC4FF287CB73200FB0B01 /* DesignTemplate.swift in Sources */,
+				ACEFC51728820A4E00FB0B01 /* FirebaseManager.swift in Sources */,
 				ACEFC506287F57E400FB0B01 /* ForgotPasswordViewController.swift in Sources */,
 				ACEFC50C2880AE6D00FB0B01 /* HomeViewController.swift in Sources */,
-				ACEFC4C6287B0A4900FB0B01 /* Box.swift in Sources */,
+				ACEFC50E2881EE5E00FB0B01 /* LogInViewModel.swift in Sources */,
 				ACEFC509287F588500FB0B01 /* RegistrationViewController.swift in Sources */,
+				ACEFC51E288215F000FB0B01 /* LoginAlertDictionary.swift in Sources */,
 				ACEFC4AB287B022900FB0B01 /* AppDelegate.swift in Sources */,
 				ACEFC4AD287B022900FB0B01 /* SceneDelegate.swift in Sources */,
 			);
@@ -439,6 +470,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		ACEFC5112882097000FB0B01 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		ACEFC5122882097000FB0B01 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ACEFC5112882097000FB0B01 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		ACEFC5142882097000FB0B01 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ACEFC5112882097000FB0B01 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = ACEFC49F287B022900FB0B01 /* Project object */;
 }

@@ -16,13 +16,17 @@ class LogInViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var centralUIView: UIView!
     @IBOutlet weak var logInButton: UIButton!
+    private var vieModel = LogInViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         passwordTextField.delegate = self
         emailTextField.delegate = self
+        vieModel.delegate = self
+        
         DesignTemplate.addShadow(object: centralUIView) // Добавляем тень для
         DesignTemplate.addShadow(object: logInButton) // Добавляем тень для кнопки "Войти"
+        
         //Добавляет наблюдателя за появлением клавиатуры
         NotificationCenter.default.addObserver(self,selector: #selector(keyboardWillShow(notification:)),name: UIResponder.keyboardWillShowNotification, object: nil)
         //Добавляет наблюдателя за скрытием клавиатуры
@@ -53,6 +57,7 @@ class LogInViewController: UIViewController {
     
     // Нажатие на кнопку "Войти"
     @IBAction func loginButtonPressed(_ sender: UIButton) {
+        vieModel.logIn(email: emailTextField.text ?? "", password: passwordTextField.text ?? "")
     }
     
     // Нажатие на кнопку скрыть/показать пароль
@@ -108,5 +113,14 @@ extension LogInViewController: UITextFieldDelegate{
                 self.passwordDivider.backgroundColor = UIColor.lightGray
             }
         }
+    }
+}
+
+//MARK: -
+extension LogInViewController: LogInDelegate{
+    func presentAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 }
