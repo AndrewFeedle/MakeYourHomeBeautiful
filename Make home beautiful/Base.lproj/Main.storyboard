@@ -50,7 +50,7 @@
                                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1JZ-Yu-XWz" userLabel="Email text box">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1@1.ru" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1JZ-Yu-XWz" userLabel="Email text box">
                                                         <rect key="frame" x="30" y="51" width="354" height="34"/>
                                                         <color key="tintColor" systemColor="labelColor"/>
                                                         <constraints>
@@ -72,14 +72,14 @@
                                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x4o-sl-Lv1" userLabel="Pass text box">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x4o-sl-Lv1" userLabel="Pass text box">
                                                         <rect key="frame" x="30" y="138" width="302" height="34"/>
                                                         <color key="tintColor" systemColor="labelColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="34" id="ZL8-2J-igJ"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                                        <textInputTraits key="textInputTraits" returnKeyType="go"/>
+                                                        <textInputTraits key="textInputTraits" returnKeyType="go" secureTextEntry="YES"/>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3zR-xe-Hms" userLabel="Divider2">
                                                         <rect key="frame" x="30" y="172" width="354" height="2"/>
@@ -196,18 +196,24 @@
                                 <viewLayoutGuide key="contentLayoutGuide" id="gUX-ps-QlW"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="tqc-GR-tB6"/>
                             </scrollView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="12H-l1-LJu">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="XjT-KS-iRz" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="9bt-dM-qR4"/>
+                            <constraint firstItem="12H-l1-LJu" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="L1h-Da-64K"/>
                             <constraint firstItem="XjT-KS-iRz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="NBs-B9-38Y"/>
                             <constraint firstItem="XjT-KS-iRz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="PhO-ah-FuJ"/>
                             <constraint firstItem="XjT-KS-iRz" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="aqs-Bk-s4e"/>
+                            <constraint firstItem="12H-l1-LJu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dtY-sy-2fi"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="vWR-Ac-CfW"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="12H-l1-LJu" id="bHv-2L-IRm"/>
                         <outlet property="centralUIView" destination="7vt-ag-caO" id="BtJ-8m-l5Y"/>
                         <outlet property="emailDivider" destination="bYv-4Y-WRQ" id="CEp-uJ-ZZW"/>
                         <outlet property="emailTextField" destination="1JZ-Yu-XWz" id="oTB-LO-QWD"/>
@@ -215,6 +221,7 @@
                         <outlet property="passwordDivider" destination="3zR-xe-Hms" id="gDM-n7-KUU"/>
                         <outlet property="passwordTextField" destination="x4o-sl-Lv1" id="7xC-nv-7Up"/>
                         <outlet property="scrollView" destination="XjT-KS-iRz" id="fd2-iO-TQ0"/>
+                        <segue destination="Sef-wP-MHU" kind="presentation" identifier="goToHome" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="SSL-iD-g9T"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -224,13 +231,14 @@
         <!--Home-->
         <scene sceneID="1Yh-Fm-ijO">
             <objects>
-                <viewController storyboardIdentifier="HomeScreen" title="Home" id="Sef-wP-MHU" customClass="HomeViewController" customModule="Make_home_beautiful" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Home" id="Sef-wP-MHU" customClass="HomeViewController" customModule="Make_home_beautiful" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Aml-nS-ODJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="wdp-7X-xfw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="o1S-dG-xjW"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qVr-m6-mK7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -9,6 +9,7 @@ import UIKit
 
 class LogInViewController: UIViewController {
 
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var emailDivider: UIView!
     @IBOutlet weak var passwordDivider: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
@@ -58,16 +59,17 @@ class LogInViewController: UIViewController {
     // Нажатие на кнопку "Войти"
     @IBAction func loginButtonPressed(_ sender: UIButton) {
         vieModel.logIn(email: emailTextField.text ?? "", password: passwordTextField.text ?? "")
+        activityIndicator.startAnimating()
     }
     
     // Нажатие на кнопку скрыть/показать пароль
     @IBAction func passVisabilityButtonPressed(_ sender: UIButton) {
         if passwordTextField.isSecureTextEntry{
-            sender.setImage(UIImage(systemName: "eye"), for: .normal)
+            sender.setImage(UIImage(systemName: "eye.slash"), for: .normal)
             passwordTextField.isSecureTextEntry = false
         }
         else{
-            sender.setImage(UIImage(systemName: "eye.slash"), for: .normal)
+            sender.setImage(UIImage(systemName: "eye"), for: .normal)
             passwordTextField.isSecureTextEntry = true
         }
     }
@@ -118,9 +120,17 @@ extension LogInViewController: UITextFieldDelegate{
 
 //MARK: -
 extension LogInViewController: LogInDelegate{
-    func presentAlert(title: String, message: String) {
+    // Показывает ошибку
+    func presentErrorAlert(title: String, message: String) {
+        activityIndicator.stopAnimating()
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    // При удачной авторизации перемещает на главный экран
+    func pushToMain(uid:String){
+        activityIndicator.stopAnimating()
+        performSegue(withIdentifier: "goToHome", sender: self)
     }
 }
