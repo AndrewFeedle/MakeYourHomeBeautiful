@@ -25,13 +25,13 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Лучшее доступное место, где вы откроете для себя самую лучшую мебель и сделаете ваш дом красивее" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gV9-dS-gdQ">
-                                <rect key="frame" x="40" y="416" width="334" height="64.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Лучшее доступное место, где вы откроете для себя самую лучшую мебель и сделаете ваш дом красивее" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="gV9-dS-gdQ">
+                                <rect key="frame" x="48" y="416" width="318.5" height="64.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" systemColor="systemGrayColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ДОМ КРАИСИВЫМ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="GJV-rE-9qj">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ДОМ КРАСИВЫМ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="GJV-rE-9qj">
                                 <rect key="frame" x="30" y="308" width="354" height="34"/>
                                 <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="30"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -52,9 +52,9 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pfq-DF-CHl" secondAttribute="trailing" constant="20" id="jW8-Ke-YTW"/>
                             <constraint firstItem="gV9-dS-gdQ" firstAttribute="top" secondItem="GJV-rE-9qj" secondAttribute="bottom" constant="74" id="l5o-ay-fRY"/>
                             <constraint firstItem="eUv-wa-5fn" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="q3V-yh-tqh"/>
-                            <constraint firstItem="gV9-dS-gdQ" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="40" id="s5e-hl-LM9"/>
+                            <constraint firstItem="gV9-dS-gdQ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="40" id="s5e-hl-LM9"/>
                             <constraint firstItem="pfq-DF-CHl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="uaj-UJ-aSy"/>
-                            <constraint firstAttribute="trailing" secondItem="gV9-dS-gdQ" secondAttribute="trailing" constant="40" id="vrX-ys-sy4"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="gV9-dS-gdQ" secondAttribute="trailing" constant="40" id="vrX-ys-sy4"/>
                         </constraints>
                     </view>
                 </viewController>

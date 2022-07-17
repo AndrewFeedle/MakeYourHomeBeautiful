@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC84A3302883499D00B52D86 /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC84A32F2883499D00B52D86 /* ForgotPasswordViewModel.swift */; };
 		ACEFC4AB287B022900FB0B01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEFC4AA287B022900FB0B01 /* AppDelegate.swift */; };
 		ACEFC4AD287B022900FB0B01 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEFC4AC287B022900FB0B01 /* SceneDelegate.swift */; };
 		ACEFC4AF287B022900FB0B01 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEFC4AE287B022900FB0B01 /* LogInViewController.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AC84A32F2883499D00B52D86 /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
 		ACEFC4A7287B022900FB0B01 /* Make home beautiful.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Make home beautiful.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACEFC4AA287B022900FB0B01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACEFC4AC287B022900FB0B01 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				ACEFC505287F57E400FB0B01 /* ForgotPasswordViewController.swift */,
+				AC84A32F2883499D00B52D86 /* ForgotPasswordViewModel.swift */,
 			);
 			path = "Forgot password";
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 				ACEFC506287F57E400FB0B01 /* ForgotPasswordViewController.swift in Sources */,
 				ACEFC50C2880AE6D00FB0B01 /* HomeViewController.swift in Sources */,
 				ACEFC50E2881EE5E00FB0B01 /* LogInViewModel.swift in Sources */,
+				AC84A3302883499D00B52D86 /* ForgotPasswordViewModel.swift in Sources */,
 				ACEFC509287F588500FB0B01 /* RegistrationViewController.swift in Sources */,
 				ACEFC51E288215F000FB0B01 /* LoginAlertDictionary.swift in Sources */,
 				ACEFC4AB287B022900FB0B01 /* AppDelegate.swift in Sources */,

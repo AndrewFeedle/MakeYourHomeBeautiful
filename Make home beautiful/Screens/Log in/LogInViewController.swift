@@ -24,6 +24,7 @@ class LogInViewController: UIViewController {
         passwordTextField.delegate = self
         emailTextField.delegate = self
         vieModel.delegate = self
+        self.hideKeyboardWhenTappedAround()
         
         DesignTemplate.addShadow(object: centralUIView) // Добавляем тень для
         DesignTemplate.addShadow(object: logInButton) // Добавляем тень для кнопки "Войти"
@@ -73,6 +74,15 @@ class LogInViewController: UIViewController {
             passwordTextField.isSecureTextEntry = true
         }
     }
+    
+    // Перед переходом на другой экран
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        // Переход на экран Забыли пароль
+//        if(segue.identifier == "goToForgotPassword"){
+//            let forgotPasswordView = segue.destination as! ForgotPasswordViewController
+//            forgotPasswordView.email = emailTextField.text
+//        }
+    }
 }
 
 //MARK: - Обработка полей ввода
@@ -118,7 +128,7 @@ extension LogInViewController: UITextFieldDelegate{
     }
 }
 
-//MARK: -
+//MARK: - LogInDelegate
 extension LogInViewController: LogInDelegate{
     // Показывает ошибку
     func presentErrorAlert(title: String, message: String) {
@@ -132,5 +142,18 @@ extension LogInViewController: LogInDelegate{
     func pushToMain(uid:String){
         activityIndicator.stopAnimating()
         performSegue(withIdentifier: "goToHome", sender: self)
+    }
+}
+
+//MARK: - Скрытие клавиатуры при нажатии куда либо еще
+extension LogInViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(LogInViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 }

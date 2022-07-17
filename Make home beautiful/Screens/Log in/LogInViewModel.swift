@@ -36,7 +36,7 @@ class LogInViewModel{
         }
         
         // Попытка войти
-        NotificationCenter.default.addObserver(self, selector: #selector(logInComplition(_:)), name: Notification.Name("logInComplition"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(logInComplition(_:)), name: Notification.Name("logInComplition"), object: FirebaseManager.self)
         FirebaseManager.authWithEmail(email: email, password: password)
         
 
