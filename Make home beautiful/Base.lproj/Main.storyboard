@@ -122,7 +122,7 @@
                                                             <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="18"/>
                                                         </buttonConfiguration>
                                                         <connections>
-                                                            <segue destination="Ydl-uO-wyY" kind="show" identifier="goToRegistration" id="XSI-8Q-eT9"/>
+                                                            <segue destination="Ydl-uO-wyY" kind="show" id="6J9-gp-Fpo"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9fs-tZ-XsN" userLabel="Eye">
@@ -218,6 +218,7 @@
                         <outlet property="emailDivider" destination="bYv-4Y-WRQ" id="CEp-uJ-ZZW"/>
                         <outlet property="emailTextField" destination="1JZ-Yu-XWz" id="oTB-LO-QWD"/>
                         <outlet property="logInButton" destination="55V-5P-fDN" id="6T8-jC-o6C"/>
+                        <outlet property="mainView" destination="8bC-Xf-vdC" id="oBN-N4-MDF"/>
                         <outlet property="passwordDivider" destination="3zR-xe-Hms" id="gDM-n7-KUU"/>
                         <outlet property="passwordTextField" destination="x4o-sl-Lv1" id="7xC-nv-7Up"/>
                         <outlet property="scrollView" destination="XjT-KS-iRz" id="fd2-iO-TQ0"/>
@@ -269,7 +270,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Укажите почту на которую будет отправлено письмо с восстановлением пароля" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="MSc-iT-TtN">
-                                <rect key="frame" x="30" y="466" width="354" height="86"/>
+                                <rect key="frame" x="30" y="497" width="354" height="86"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="86" id="KeV-43-0wa"/>
                                 </constraints>
@@ -278,20 +279,20 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lock-svg" translatesAutoresizingMaskIntoConstraints="NO" id="074-3S-taK">
-                                <rect key="frame" x="157" y="306" width="100" height="100"/>
+                                <rect key="frame" x="157" y="337" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="GHz-KK-JAk"/>
                                     <constraint firstAttribute="height" constant="100" id="NbJ-us-9hX"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1@1.ru" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="OaK-AK-Cqv" userLabel="Email text box">
-                                <rect key="frame" x="30" y="592" width="354" height="33"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="OaK-AK-Cqv" userLabel="Email text box">
+                                <rect key="frame" x="30" y="603" width="354" height="33"/>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="send"/>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i1g-UD-b7u" userLabel="divider1">
-                                <rect key="frame" x="30" y="625" width="354" height="2"/>
+                                <rect key="frame" x="30" y="636" width="354" height="2"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="PsX-eH-DA4"/>
@@ -307,40 +308,42 @@
                                     <color key="baseForegroundColor" systemColor="tertiarySystemBackgroundColor"/>
                                     <color key="baseBackgroundColor" systemColor="labelColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="sendMailPressed:" destination="d5F-wT-Ncs" eventType="touchUpInside" id="3aV-FB-0NU"/>
+                                </connections>
                             </button>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="повторная отправка будет доступна через 30 сек" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="m0d-W6-3vT">
-                                <rect key="frame" x="30" y="637" width="354" height="41"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="6Xe-rj-KOh">
+                                <rect key="frame" x="188.5" y="402.5" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="iWq-ny-QIW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="6Xe-rj-KOh" firstAttribute="centerX" secondItem="Ehj-y6-ggf" secondAttribute="centerX" id="1ql-JQ-vdi"/>
                             <constraint firstItem="OaK-AK-Cqv" firstAttribute="leading" secondItem="iWq-ny-QIW" secondAttribute="leading" constant="30" id="4If-0U-qEy"/>
-                            <constraint firstItem="OaK-AK-Cqv" firstAttribute="top" secondItem="MSc-iT-TtN" secondAttribute="bottom" constant="40" id="G31-M1-lsg"/>
+                            <constraint firstItem="OaK-AK-Cqv" firstAttribute="top" secondItem="MSc-iT-TtN" secondAttribute="bottom" constant="20" id="G31-M1-lsg"/>
                             <constraint firstItem="MSc-iT-TtN" firstAttribute="leading" secondItem="iWq-ny-QIW" secondAttribute="leading" constant="30" id="Kkk-UI-9pl"/>
-                            <constraint firstItem="ZIE-nc-0jx" firstAttribute="top" secondItem="m0d-W6-3vT" secondAttribute="bottom" constant="20" id="PLe-cQ-irv"/>
+                            <constraint firstItem="ZIE-nc-0jx" firstAttribute="top" secondItem="i1g-UD-b7u" secondAttribute="bottom" constant="60" id="LDd-Vs-Mxz"/>
+                            <constraint firstItem="6Xe-rj-KOh" firstAttribute="centerY" secondItem="Ehj-y6-ggf" secondAttribute="centerY" id="N4T-ky-gUq"/>
                             <constraint firstAttribute="trailingMargin" secondItem="i1g-UD-b7u" secondAttribute="trailing" constant="10" id="RfI-5b-eXN"/>
-                            <constraint firstItem="m0d-W6-3vT" firstAttribute="top" secondItem="i1g-UD-b7u" secondAttribute="bottom" constant="10" id="XhD-bQ-yj3"/>
                             <constraint firstItem="i1g-UD-b7u" firstAttribute="leading" secondItem="Ehj-y6-ggf" secondAttribute="leadingMargin" constant="10" id="YcT-78-dWk"/>
                             <constraint firstItem="iWq-ny-QIW" firstAttribute="trailing" secondItem="MSc-iT-TtN" secondAttribute="trailing" constant="30" id="bGo-vB-9qx"/>
                             <constraint firstItem="MSc-iT-TtN" firstAttribute="top" secondItem="074-3S-taK" secondAttribute="bottom" constant="60" id="cgB-nj-hT4"/>
                             <constraint firstItem="074-3S-taK" firstAttribute="centerX" secondItem="Ehj-y6-ggf" secondAttribute="centerX" id="fem-f7-Knv"/>
                             <constraint firstItem="i1g-UD-b7u" firstAttribute="top" secondItem="OaK-AK-Cqv" secondAttribute="bottom" id="hAH-G4-X7Y"/>
                             <constraint firstItem="iWq-ny-QIW" firstAttribute="trailing" secondItem="OaK-AK-Cqv" secondAttribute="trailing" constant="30" id="k3i-bm-aBY"/>
-                            <constraint firstItem="iWq-ny-QIW" firstAttribute="trailing" secondItem="m0d-W6-3vT" secondAttribute="trailing" constant="30" id="mGn-QH-4i0"/>
                             <constraint firstItem="iWq-ny-QIW" firstAttribute="bottom" secondItem="ZIE-nc-0jx" secondAttribute="bottom" constant="60" id="ogM-Go-Jta"/>
                             <constraint firstItem="ZIE-nc-0jx" firstAttribute="centerX" secondItem="Ehj-y6-ggf" secondAttribute="centerX" id="qqE-Je-dXd"/>
-                            <constraint firstItem="m0d-W6-3vT" firstAttribute="leading" secondItem="iWq-ny-QIW" secondAttribute="leading" constant="30" id="qrk-9b-rzy"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="imy-mm-CBc"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="6Xe-rj-KOh" id="v6q-gU-aEu"/>
                         <outlet property="bottomConstrait" destination="ogM-Go-Jta" id="6De-j6-TTu"/>
                         <outlet property="divider" destination="i1g-UD-b7u" id="EQo-Va-Mkc"/>
                         <outlet property="emailTextField" destination="OaK-AK-Cqv" id="l79-cI-Nwi"/>
-                        <outlet property="resendMessage" destination="m0d-W6-3vT" id="ghH-85-amC"/>
+                        <outlet property="mainView" destination="Ehj-y6-ggf" id="z82-RJ-zge"/>
+                        <outlet property="sendMailButton" destination="ZIE-nc-0jx" id="Weg-iW-uDE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LxV-oC-D24" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

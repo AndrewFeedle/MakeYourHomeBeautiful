@@ -37,7 +37,12 @@ struct FirebaseManager{
         var returnString = ["result":""]
         Auth.auth().sendPasswordReset(withEmail: email) { error in
             if let error = error{
-                returnString["result"] = error.localizedDescription
+                let resultMessage = error.localizedDescription
+                if resultMessage.contains("There is no user record"){
+                    returnString["result"] = "Пользователь с такой почтой не найден"
+                }else{
+                    returnString["result"] = resultMessage
+                }
             }else{
                 returnString["result"] = "sucsess"
             }

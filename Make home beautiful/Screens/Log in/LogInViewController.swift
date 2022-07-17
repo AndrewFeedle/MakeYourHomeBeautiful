@@ -9,6 +9,7 @@ import UIKit
 
 class LogInViewController: UIViewController {
 
+    @IBOutlet var mainView: UIView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var emailDivider: UIView!
     @IBOutlet weak var passwordDivider: UIView!
@@ -60,6 +61,7 @@ class LogInViewController: UIViewController {
     // Нажатие на кнопку "Войти"
     @IBAction func loginButtonPressed(_ sender: UIButton) {
         vieModel.logIn(email: emailTextField.text ?? "", password: passwordTextField.text ?? "")
+        mainView.isUserInteractionEnabled = false
         activityIndicator.startAnimating()
     }
     
@@ -132,6 +134,7 @@ extension LogInViewController: UITextFieldDelegate{
 extension LogInViewController: LogInDelegate{
     // Показывает ошибку
     func presentErrorAlert(title: String, message: String) {
+        mainView.isUserInteractionEnabled = true
         activityIndicator.stopAnimating()
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: nil))
@@ -140,6 +143,7 @@ extension LogInViewController: LogInDelegate{
     
     // При удачной авторизации перемещает на главный экран
     func pushToMain(uid:String){
+        mainView.isUserInteractionEnabled = true
         activityIndicator.stopAnimating()
         performSegue(withIdentifier: "goToHome", sender: self)
     }
