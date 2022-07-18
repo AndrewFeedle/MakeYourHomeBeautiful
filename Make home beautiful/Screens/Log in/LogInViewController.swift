@@ -42,21 +42,7 @@ class LogInViewController: UIViewController {
         NotificationCenter.default.removeObserver(self)
     }
 
-    // При появлении клавиатуры
-    @objc func keyboardWillShow(notification: NSNotification) {
-        let userInfo: NSDictionary = notification.userInfo! as NSDictionary
-        let keyboardInfo = userInfo[UIResponder.keyboardFrameBeginUserInfoKey] as! NSValue
-        let keyboardSize = keyboardInfo.cgRectValue.size
-        let contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize.height + 10, right: 0)
-        scrollView.contentInset = contentInsets
-        scrollView.scrollIndicatorInsets = contentInsets
-    }
-
-    // При скрытии клавиатуры
-    @objc func keyboardWillHide(notification: NSNotification) {
-        scrollView.contentInset = .zero
-        scrollView.scrollIndicatorInsets = .zero
-    }
+    
     
     // Нажатие на кнопку "Войти"
     @IBAction func loginButtonPressed(_ sender: UIButton) {
@@ -149,7 +135,7 @@ extension LogInViewController: LogInDelegate{
     }
 }
 
-//MARK: - Скрытие клавиатуры при нажатии куда либо еще
+//MARK: - Скрытие клавиатуры и регулировка положения view
 extension LogInViewController {
     func hideKeyboardWhenTappedAround() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(LogInViewController.dismissKeyboard))
@@ -159,5 +145,21 @@ extension LogInViewController {
     
     @objc func dismissKeyboard() {
         view.endEditing(true)
+    }
+    
+    // При появлении клавиатуры
+    @objc func keyboardWillShow(notification: NSNotification) {
+        let userInfo: NSDictionary = notification.userInfo! as NSDictionary
+        let keyboardInfo = userInfo[UIResponder.keyboardFrameBeginUserInfoKey] as! NSValue
+        let keyboardSize = keyboardInfo.cgRectValue.size
+        let contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize.height + 10, right: 0)
+        scrollView.contentInset = contentInsets
+        scrollView.scrollIndicatorInsets = contentInsets
+    }
+
+    // При скрытии клавиатуры
+    @objc func keyboardWillHide(notification: NSNotification) {
+        scrollView.contentInset = .zero
+        scrollView.scrollIndicatorInsets = .zero
     }
 }
