@@ -8,7 +8,7 @@ import Foundation
 
 protocol LogInDelegate{
     func presentErrorAlert(title:String, message:String)
-    func pushToMain(uid:String)
+    func pushToHome(uid:String)
 }
 
 class LogInViewModel{
@@ -17,21 +17,22 @@ class LogInViewModel{
     // обработка авторизации
     func logIn(email:String, password:String){
         // Проверка заполненности полей
+        let errorTitle = "Ошибка входа"
         if email.isEmpty{
-            delegate?.presentErrorAlert(title: "Ошибка входа", message: "Почта не должна быть пустой")
+            delegate?.presentErrorAlert(title: errorTitle, message: "Почта не должна быть пустой")
             return
         }
-        let emailPred = NSPredicate(format:"SELF MATCHES %@", "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}")
-        if !emailPred.evaluate(with: email){
-            delegate?.presentErrorAlert(title: "Ошибка входа", message: "Неверный формат почты")
+        let emailPredicate = NSPredicate(format:"SELF MATCHES %@", Constants.emailPredicateFormat)
+        if !emailPredicate.evaluate(with: email){
+            delegate?.presentErrorAlert(title: errorTitle, message: "Неверный формат почты")
             return
         }
         if password.isEmpty{
-            delegate?.presentErrorAlert(title: "Ошибка входа", message: "Пароль не должен быть пустым")
+            delegate?.presentErrorAlert(title: errorTitle, message: "Пароль не должен быть пустым")
             return
         }
         if password.count < 6{
-            delegate?.presentErrorAlert(title: "Ошибка входа", message: "Длина пароля должна быть не менее 6 символов")
+            delegate?.presentErrorAlert(title: errorTitle, message: "Длина пароля должна быть не менее 6 символов")
             return
         }
         
@@ -50,7 +51,7 @@ class LogInViewModel{
             delegate?.presentErrorAlert(title: "Ошибка входа", message: errorMessage)
         }
         else{
-            delegate?.pushToMain(uid: notification.userInfo!["uid"] as! String)
+            delegate?.pushToHome(uid: notification.userInfo!["uid"] as! String)
         }
     }
 }

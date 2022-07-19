@@ -24,6 +24,8 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet var mainView: UIView!
+    private var viewModel = RegisterViewModel()
+    private var uid:String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,10 +40,14 @@ class RegisterViewController: UIViewController {
         emailTextField.delegate = self
         passwordTextField.delegate = self
         passwordReTextField.delegate = self
+        viewModel.delegate = self
     }
     
     // Нажатие на кнопку зарегистрироваться
     @IBAction func registerButtonPressed(_ sender: UIButton) {
+        mainView.isUserInteractionEnabled = false
+        activityIndicator.startAnimating()
+        viewModel.registerNewUser(name: nameTextField.text ?? "", email: emailTextField.text ?? "", password: passwordTextField.text ?? "", passwordRe: passwordReTextField.text ?? "")
     }
     
     // Нажатие на кнопку скрыть пароль
@@ -69,10 +75,17 @@ class RegisterViewController: UIViewController {
     }
     // При нажатии Уже есть аккаунт
     @IBAction func alreadyHaveAccountPressed(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
 
-    
+    // Перед переходом на другой экран
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Переход на экран Домой
+        if(segue.identifier == "fromRegisterToHome"){
+            let homeView = segue.destination as! HomeViewController
+            homeView.uid = uid
+        }
+    }
 }
 
 //MARK: - Обработка полей ввода
@@ -167,3 +180,21 @@ extension RegisterViewController {
     }
 }
 
+//MARK: - LogInDelegate
+extension RegisterViewController: RegisterViewDelegate{    
+    // Показывает ошибку
+    func presentErrorAlert(title: String, message: String) {
+        mainView.isUserInteractionEnabled = true
+        activityIndicator.stopAnimating()
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    // При удачной регистрации перемещает на главный экран
+    func pushToHome(uid:String){
+        mainView.isUserInteractionEnabled = true
+        activityIndicator.stopAnimating()
+        performSegue(withIdentifier: "fromRegisterToHome", sender: self)
+    }
+}

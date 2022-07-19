@@ -7,27 +7,26 @@
 
 import Foundation
 import FirebaseAuth
+import FirebaseFirestore
 
 struct FirebaseManager{
     
     // Авторизация пользователя
     static func authWithEmail(email:String, password:String){
         Auth.auth().signIn(withEmail: email, password: password) { authDataResault, error in
-            var errorMessage: String?
-            var uid: String?
+            var data: [String : Any] = ["error":"", "uid":""]
             if let error = error{
                 let errorDescription = error.localizedDescription
                 if errorDescription.contains("There is no user record corresponding to this"){
-                    errorMessage = "Пользователя с такой почтой и паролем не существует"
+                    data["error"] = "Пользователя с такой почтой и паролем не существует"
                 }else{
-                    errorMessage = errorDescription
+                    data["error"] = errorDescription
                 }
             }
             else{
-                uid = authDataResault?.user.uid
+                data["uid"] = authDataResault?.user.uid
             }
-            
-            let data: [String : Any] = ["error":errorMessage ?? "", "uid":uid ?? ""]
+
             NotificationCenter.default.post(name: Notification.Name("logInComplition"), object: self, userInfo: data)
         }
     }
@@ -47,6 +46,33 @@ struct FirebaseManager{
                 returnString["result"] = "sucsess"
             }
             NotificationCenter.default.post(name: Notification.Name("sendPasswordResetComplition"), object: self, userInfo: returnString)
+        }
+    }
+    
+    // Создает нового пользователя
+    static func createUser(email:String, password:String, name:String){
+        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+            var data: [String : Any] = ["error":"", "uid":""]
+            if let error = error{
+                let errorMessage = error.localizedDescription
+                if errorMessage.contains("The email address is already"){
+                    data["error"] = "Пользователь с такой почтой уже существует"
+                }else{
+                    data["error"] = errorMessage
+                }
+            }else{
+                let uid = authResult?.user.uid ?? ""
+                data["uid"] = uid
+                let db = Firestore.firestore()
+                db.collection("users").addDocument(data: [
+                    "uid": uid,
+                    "name": name]) { error in
+                    if let error = error {
+                        data["error"] = error
+                    }
+                }
+            }
+            NotificationCenter.default.post(name: Notification.Name("RegisterComplition"), object: self, userInfo: data)
         }
     }
 }

@@ -17,10 +17,9 @@ class ForgotPasswordViewController: UIViewController {
     @IBOutlet var mainView: UIView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var bottomConstrait: NSLayoutConstraint!
-    @IBOutlet weak var resendMessage: UILabel!
     @IBOutlet weak var divider: UIView!
     @IBOutlet weak var emailTextField: UITextField!
-    var viewModel = ForgotPasswordViewModel()
+    private var viewModel = ForgotPasswordViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()

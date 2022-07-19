@@ -218,11 +218,28 @@
                         <outlet property="passwordDivider" destination="3zR-xe-Hms" id="gDM-n7-KUU"/>
                         <outlet property="passwordTextField" destination="x4o-sl-Lv1" id="7xC-nv-7Up"/>
                         <outlet property="scrollView" destination="XjT-KS-iRz" id="fd2-iO-TQ0"/>
+                        <segue destination="UJo-jZ-ERF" kind="show" identifier="fromLoginToHome" id="RaT-qb-LT7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="886.95652173913049" y="53.571428571428569"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="Ifk-sB-l5i">
+            <objects>
+                <viewController storyboardIdentifier="Home" id="UJo-jZ-ERF" customClass="HomeViewController" customModule="Make_home_beautiful" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6X5-m4-ATP" userLabel="Home">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="rzz-Cx-MaL"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Xa1-fS-smp"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E40-IN-fiC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1958" y="54"/>
         </scene>
         <!--Registration-->
         <scene sceneID="1Yh-Fm-ijO">
@@ -510,6 +527,7 @@
                         <outlet property="passwordTextField" destination="HmG-um-YuL" id="nZk-Oq-XT0"/>
                         <outlet property="registerButton" destination="YUe-fF-epT" id="UiN-R3-MTo"/>
                         <outlet property="scrollView" destination="jQS-hz-N3P" id="LWI-Zu-phZ"/>
+                        <segue destination="UJo-jZ-ERF" kind="show" identifier="fromRegisterToHome" id="8aL-Ni-QcS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qVr-m6-mK7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -623,6 +641,9 @@
             <point key="canvasLocation" x="-23" y="54"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="RaT-qb-LT7"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="Logo" width="315" height="65"/>
         <image name="eye" catalog="system" width="128" height="81"/>

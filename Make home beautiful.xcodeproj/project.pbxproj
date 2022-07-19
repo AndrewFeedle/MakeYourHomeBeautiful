@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC4EEB3E28871E1F00423750 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4EEB3D28871E1F00423750 /* RegisterViewModel.swift */; };
+		AC4EEB422887256F00423750 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4EEB412887256F00423750 /* Constants.swift */; };
+		AC4EEB452887304300423750 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4EEB442887304300423750 /* HomeViewController.swift */; };
 		AC84A3302883499D00B52D86 /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC84A32F2883499D00B52D86 /* ForgotPasswordViewModel.swift */; };
 		ACC090502885E3DA00BEBA33 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC0904F2885E3DA00BEBA33 /* RegisterViewController.swift */; };
 		ACEFC4AB287B022900FB0B01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEFC4AA287B022900FB0B01 /* AppDelegate.swift */; };
@@ -26,6 +29,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AC4EEB3D28871E1F00423750 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		AC4EEB412887256F00423750 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		AC4EEB442887304300423750 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		AC84A32F2883499D00B52D86 /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
 		ACC0904F2885E3DA00BEBA33 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		ACEFC4A7287B022900FB0B01 /* Make home beautiful.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Make home beautiful.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,10 +65,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AC4EEB432887302D00423750 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				AC4EEB442887304300423750 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		ACC0904E2885E3C500BEBA33 /* Register */ = {
 			isa = PBXGroup;
 			children = (
 				ACC0904F2885E3DA00BEBA33 /* RegisterViewController.swift */,
+				AC4EEB3D28871E1F00423750 /* RegisterViewModel.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -111,6 +126,7 @@
 		ACEFC502287F570F00FB0B01 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				AC4EEB432887302D00423750 /* Home */,
 				ACC0904E2885E3C500BEBA33 /* Register */,
 				ACEFC503287F576D00FB0B01 /* Log in */,
 				ACEFC504287F579900FB0B01 /* Forgot password */,
@@ -141,6 +157,7 @@
 			children = (
 				ACEFC4FE287CB73100FB0B01 /* DesignTemplate.swift */,
 				ACEFC51D288215F000FB0B01 /* LoginAlertDictionary.swift */,
+				AC4EEB412887256F00423750 /* Constants.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -233,8 +250,11 @@
 				ACC090502885E3DA00BEBA33 /* RegisterViewController.swift in Sources */,
 				AC84A3302883499D00B52D86 /* ForgotPasswordViewModel.swift in Sources */,
 				ACEFC51E288215F000FB0B01 /* LoginAlertDictionary.swift in Sources */,
+				AC4EEB3E28871E1F00423750 /* RegisterViewModel.swift in Sources */,
 				ACEFC4AB287B022900FB0B01 /* AppDelegate.swift in Sources */,
 				ACEFC4AD287B022900FB0B01 /* SceneDelegate.swift in Sources */,
+				AC4EEB452887304300423750 /* HomeViewController.swift in Sources */,
+				AC4EEB422887256F00423750 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

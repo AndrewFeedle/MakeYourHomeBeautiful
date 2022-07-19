@@ -19,6 +19,7 @@ class LogInViewController: UIViewController {
     @IBOutlet weak var centralUIView: UIView!
     @IBOutlet weak var logInButton: UIButton!
     private var vieModel = LogInViewModel()
+    private var uid:String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,8 +42,6 @@ class LogInViewController: UIViewController {
         super.viewWillDisappear(animated)
         NotificationCenter.default.removeObserver(self)
     }
-
-    
     
     // Нажатие на кнопку "Войти"
     @IBAction func loginButtonPressed(_ sender: UIButton) {
@@ -65,11 +64,11 @@ class LogInViewController: UIViewController {
     
     // Перед переходом на другой экран
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        // Переход на экран Забыли пароль
-//        if(segue.identifier == "goToForgotPassword"){
-//            let forgotPasswordView = segue.destination as! ForgotPasswordViewController
-//            forgotPasswordView.email = emailTextField.text
-//        }
+        // Переход на экран Домой
+        if(segue.identifier == "fromLoginToHome"){
+            let homeView = segue.destination as! HomeViewController
+            homeView.uid = uid
+        }
     }
 }
 
@@ -116,25 +115,6 @@ extension LogInViewController: UITextFieldDelegate{
     }
 }
 
-//MARK: - LogInDelegate
-extension LogInViewController: LogInDelegate{
-    // Показывает ошибку
-    func presentErrorAlert(title: String, message: String) {
-        mainView.isUserInteractionEnabled = true
-        activityIndicator.stopAnimating()
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
-    }
-    
-    // При удачной авторизации перемещает на главный экран
-    func pushToMain(uid:String){
-        mainView.isUserInteractionEnabled = true
-        activityIndicator.stopAnimating()
-        performSegue(withIdentifier: "goToHome", sender: self)
-    }
-}
-
 //MARK: - Скрытие клавиатуры и регулировка положения view
 extension LogInViewController {
     func hideKeyboardWhenTappedAround() {
@@ -161,5 +141,25 @@ extension LogInViewController {
     @objc func keyboardWillHide(notification: NSNotification) {
         scrollView.contentInset = .zero
         scrollView.scrollIndicatorInsets = .zero
+    }
+}
+
+//MARK: - LogInDelegate
+extension LogInViewController: LogInDelegate{
+    // Показывает ошибку
+    func presentErrorAlert(title: String, message: String) {
+        mainView.isUserInteractionEnabled = true
+        activityIndicator.stopAnimating()
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    // При удачной авторизации перемещает на главный экран
+    func pushToHome(uid:String){
+        self.uid = uid
+        mainView.isUserInteractionEnabled = true
+        activityIndicator.stopAnimating()
+        performSegue(withIdentifier: "fromLoginToHome", sender: self)
     }
 }
