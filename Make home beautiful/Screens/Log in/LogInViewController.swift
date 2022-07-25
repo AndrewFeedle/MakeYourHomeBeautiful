@@ -8,7 +8,7 @@
 import UIKit
 
 class LogInViewController: UIViewController {
-
+    
     @IBOutlet var mainView: UIView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var emailDivider: UIView!
@@ -18,36 +18,52 @@ class LogInViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var centralUIView: UIView!
     @IBOutlet weak var logInButton: UIButton!
-    private var vieModel = LogInViewModel()
+    private lazy var viewModel = LogInViewModel()
     private var uid:String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         passwordTextField.delegate = self
         emailTextField.delegate = self
-        vieModel.delegate = self
-        self.hideKeyboardWhenTappedAround()
+        self.hideKeyboardWhenTappedAround() //Скрытие клавиатуры при нажатии куда-либо еще
         
-        DesignTemplate.addShadow(object: centralUIView) // Добавляем тень для
-        DesignTemplate.addShadow(object: logInButton) // Добавляем тень для кнопки "Войти"
+        DesignSnippets.addShadow(object: centralUIView) // Добавляем тень для
+        DesignSnippets.addShadow(object: logInButton) // Добавляем тень для кнопки "Войти"
         
         //Добавляет наблюдателя за появлением клавиатуры
         NotificationCenter.default.addObserver(self,selector: #selector(keyboardWillShow(notification:)),name: UIResponder.keyboardWillShowNotification, object: nil)
         //Добавляет наблюдателя за скрытием клавиатуры
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)),name: UIResponder.keyboardWillHideNotification,object: nil)
+        
+        setLogInObservers()//Подключаем наблюдателей и пытаемся авторизоваться
+        activityIndicator.startAnimating()
+        DispatchQueue.global(qos: DispatchQoS.QoSClass.userInitiated).async {
+            self.viewModel.tryLogIn() // Попытка входа
+        }
     }
     
     //При закрытии формы
     override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
         NotificationCenter.default.removeObserver(self)
+        super.viewWillDisappear(animated)
+    }
+    
+    // Установка наблюдателей при попытке входа
+    private func setLogInObservers(){
+        NotificationCenter.default.addObserver(self, selector: #selector(presentErrorAlert(_:)), name: Notification.Name("presentErrorAlert"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(pushToHome(_:)), name: Notification.Name("pushToHome"), object: nil)
     }
     
     // Нажатие на кнопку "Войти"
     @IBAction func loginButtonPressed(_ sender: UIButton) {
-        vieModel.logIn(email: emailTextField.text ?? "", password: passwordTextField.text ?? "")
         mainView.isUserInteractionEnabled = false
         activityIndicator.startAnimating()
+        setLogInObservers()//Подключаем наблюдателей и пытаемся авторизоваться
+        let emailText = emailTextField.text ?? ""
+        let passwordText = passwordTextField.text ?? ""
+        DispatchQueue.global(qos: DispatchQoS.QoSClass.userInitiated).async {[self] in
+            viewModel.logIn(email: emailText, password: passwordText)
+        }
     }
     
     // Нажатие на кнопку скрыть/показать пароль
@@ -68,6 +84,47 @@ class LogInViewController: UIViewController {
         if(segue.identifier == "fromLoginToHome"){
             let homeView = segue.destination as! HomeViewController
             homeView.uid = uid
+        }
+    }
+    
+    // Показывает ошибку
+    @objc private func presentErrorAlert(_ notification: Notification) {
+        DispatchQueue.main.async {[self] in
+            NotificationCenter.default.removeObserver(self)
+            mainView.isUserInteractionEnabled = true
+            activityIndicator.stopAnimating()
+            if scrollView.isHidden{
+                setScrollViewHidden(Notification(name: Notification.Name(""), object: nil, userInfo: ["hide":false]))
+            }
+            let title = notification.userInfo!["title"] as! String
+            let message = notification.userInfo!["message"] as! String
+            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    // При удачной авторизации перемещает на главный экран
+    @objc private func pushToHome(_ notification: Notification){
+        DispatchQueue.main.async {[self] in
+            NotificationCenter.default.removeObserver(self)
+            self.uid = notification.userInfo!["uid"] as? String
+            mainView.isUserInteractionEnabled = true
+            activityIndicator.stopAnimating()
+            emailTextField.text = ""
+            passwordTextField.text = ""
+            setScrollViewHidden(Notification(name: Notification.Name(""), object: self, userInfo: ["hide":false]))
+            performSegue(withIdentifier: "fromLoginToHome", sender: self)
+        }
+    }
+    
+    // Устанавлиает видимость формы
+    @objc private func setScrollViewHidden(_ notification: Notification){
+        DispatchQueue.main.async {[self] in
+            let isHidden = (notification.userInfo!["hide"] as? Bool)!
+            UIView.transition(with: scrollView, duration: 0.4,
+                              options: .transitionCrossDissolve,
+                              animations: {self.scrollView.isHidden = isHidden})
         }
     }
 }
@@ -104,12 +161,12 @@ extension LogInViewController: UITextFieldDelegate{
     func textFieldDidEndEditing(_ textField: UITextField) {
         if !emailTextField.isEditing{
             UIView.animate(withDuration: 0.3) {
-                self.emailDivider.backgroundColor = UIColor.lightGray
+                self.emailDivider.backgroundColor = UIColor.systemGray
             }
         }
         if !passwordTextField.isEditing{
             UIView.animate(withDuration: 0.3) {
-                self.passwordDivider.backgroundColor = UIColor.lightGray
+                self.passwordDivider.backgroundColor = UIColor.systemGray
             }
         }
     }
@@ -117,6 +174,7 @@ extension LogInViewController: UITextFieldDelegate{
 
 //MARK: - Скрытие клавиатуры и регулировка положения view
 extension LogInViewController {
+    // Скрывает клавиатуру, когда нажимаешь куда-либо еще
     func hideKeyboardWhenTappedAround() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(LogInViewController.dismissKeyboard))
         tap.cancelsTouchesInView = false
@@ -136,30 +194,10 @@ extension LogInViewController {
         scrollView.contentInset = contentInsets
         scrollView.scrollIndicatorInsets = contentInsets
     }
-
+    
     // При скрытии клавиатуры
     @objc func keyboardWillHide(notification: NSNotification) {
         scrollView.contentInset = .zero
         scrollView.scrollIndicatorInsets = .zero
-    }
-}
-
-//MARK: - LogInDelegate
-extension LogInViewController: LogInDelegate{
-    // Показывает ошибку
-    func presentErrorAlert(title: String, message: String) {
-        mainView.isUserInteractionEnabled = true
-        activityIndicator.stopAnimating()
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
-    }
-    
-    // При удачной авторизации перемещает на главный экран
-    func pushToHome(uid:String){
-        self.uid = uid
-        mainView.isUserInteractionEnabled = true
-        activityIndicator.stopAnimating()
-        performSegue(withIdentifier: "fromLoginToHome", sender: self)
     }
 }

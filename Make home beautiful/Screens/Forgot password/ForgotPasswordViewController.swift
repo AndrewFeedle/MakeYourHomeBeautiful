@@ -5,10 +5,6 @@
 //  Created by Feedle on 13.07.2022.
 //
 
-protocol ForgotPasswordDelegate{
-    func presentErrorAlert(title: String, message: String)
-}
-
 import UIKit
 
 class ForgotPasswordViewController: UIViewController {
@@ -19,15 +15,18 @@ class ForgotPasswordViewController: UIViewController {
     @IBOutlet weak var bottomConstrait: NSLayoutConstraint!
     @IBOutlet weak var divider: UIView!
     @IBOutlet weak var emailTextField: UITextField!
-    private var viewModel = ForgotPasswordViewModel()
+    private lazy var viewModel = ForgotPasswordViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.hideKeyboardWhenTappedAround()
+        self.hideKeyboardWhenTappedAround()//Скрытие клавиатуры при нажатии куда-либо еще
+        
+        //Добавляет наблюдателя за появлением клавиатуры
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardNotification), name: UIResponder.keyboardWillShowNotification, object: nil)
+        //Добавляет наблюдателя за скрытием клавиатуры
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardNotification), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
         emailTextField.delegate = self
-        viewModel.delegate = self
         emailTextField.becomeFirstResponder()        
     }
     
@@ -38,19 +37,54 @@ class ForgotPasswordViewController: UIViewController {
     
     // Нажатие на кнопку Отправить письмо
     @IBAction func sendMailPressed(_ sender: UIButton) {
-        if emailTextField.text != nil{
             activityIndicator.startAnimating()
-            viewModel.sendMailPressed(email: emailTextField.text!)
             mainView.isUserInteractionEnabled = false
-            activityIndicator.startAnimating()
-        }else{
-            presentErrorAlert(title: "Ошибка", message: "Почта не должна быьт пустой")
+        NotificationCenter.default.addObserver(self, selector: #selector(presentErrorAlert(_:)), name: Notification.Name("presentErrorAlert"), object: nil)
+        let text = emailTextField.text ?? ""
+        DispatchQueue.global(qos: DispatchQoS.QoSClass.userInitiated).async {
+            self.viewModel.sendMailPressed(email: text)
         }
     }
     
+    // Показывает сообщение пользователю
+    @objc private func presentErrorAlert(_ notification: Notification) {
+        DispatchQueue.main.async {[self] in
+            NotificationCenter.default.removeObserver(self)
+            let title = notification.userInfo!["title"] as? String
+            let message = notification.userInfo!["message"] as? String
+            activityIndicator.stopAnimating()
+            mainView.isUserInteractionEnabled = true
+            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            if title == ""{
+                emailTextField.text = ""
+                alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: dismissScreen))
+            }else{
+                alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: nil))
+            }
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    // Возвращает на предыдущий экран
+    private func dismissScreen(alertAction :UIAlertAction){
+        dismiss(animated: true, completion: nil)
+    }
+}
+
+//MARK: -  Обработка клавиатуры
+extension ForgotPasswordViewController {
+    private func hideKeyboardWhenTappedAround() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(LogInViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc private func dismissKeyboard() {
+        view.endEditing(true)
+    }
     
     // Обработка клавиатуры чтобы она не перекрывала текстовые поля
-    @objc func handleKeyboardNotification(_ notification: Notification) {
+    @objc private func handleKeyboardNotification(_ notification: Notification) {
         if let userInfo = notification.userInfo {
             let keyboardFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as AnyObject).cgRectValue
             let isKeyboardShowing = notification.name == UIResponder.keyboardWillShowNotification
@@ -62,40 +96,6 @@ class ForgotPasswordViewController: UIViewController {
     }
 }
 
-//MARK: - ForgotPasswordDelegate
-extension ForgotPasswordViewController: ForgotPasswordDelegate{
-    // Показывает сообщение пользователю
-    func presentErrorAlert(title: String, message: String) {
-        activityIndicator.stopAnimating()
-        mainView.isUserInteractionEnabled = true
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        if title == ""{
-            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: dismissScreen))
-        }else{
-            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: nil))
-        }
-        self.present(alert, animated: true, completion: nil)
-    }
-    
-    // Возвращает на предыдущий экран
-    func dismissScreen(alertAction :UIAlertAction){
-        dismiss(animated: true, completion: nil)
-    }
-}
-
-//MARK: -  Скрытие клавиатуры при нажатии куда либо еще
-extension ForgotPasswordViewController {
-    func hideKeyboardWhenTappedAround() {
-        let tap = UITapGestureRecognizer(target: self, action: #selector(LogInViewController.dismissKeyboard))
-        tap.cancelsTouchesInView = false
-        view.addGestureRecognizer(tap)
-    }
-    
-    @objc func dismissKeyboard() {
-        view.endEditing(true)
-    }
-}
-
 //MARK: - Обработка полей ввода
 extension ForgotPasswordViewController: UITextFieldDelegate{
     //При нажатии на клавиатуре кнопки Send
@@ -104,18 +104,18 @@ extension ForgotPasswordViewController: UITextFieldDelegate{
         sendMailPressed(sendMailButton)
         return true
     }
-
+    
     // Когда текстовое поле начали редактировать
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        UIView.animate(withDuration: 0.3) {
-            self.divider.backgroundColor = UIColor.label
+            UIView.animate(withDuration: 0.3) {
+                self.divider.backgroundColor = UIColor.label
         }
     }
-
+    
     // Когда текстовое поле закончили редактировать
     func textFieldDidEndEditing(_ textField: UITextField) {
-        UIView.animate(withDuration: 0.3) {
-            self.divider.backgroundColor = UIColor.lightGray
-        }
+            UIView.animate(withDuration: 0.3) {
+                self.divider.backgroundColor = UIColor.systemGray
+            }
     }
 }

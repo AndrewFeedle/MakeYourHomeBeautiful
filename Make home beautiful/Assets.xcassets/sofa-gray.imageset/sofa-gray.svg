@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 25 25"
+   version="1.1"
+   id="svg1617"
+   sodipodi:docname="sofa-gray.svg"
+   inkscape:version="1.2.1 (9c6d41e4, 2022-07-14)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1619"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="9.44"
+     inkscape:cx="12.5"
+     inkscape:cy="12.5"
+     inkscape:window-width="1280"
+     inkscape:window-height="456"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg1617" />
+  <defs
+     id="defs1600">
+    <style
+       id="style1598">.cls-1{fill:#231f20;}</style>
+  </defs>
+  <g
+     id="sofa"
+     style="fill:#4d4d4d">
+    <path
+       class="cls-1"
+       d="M23,10h-.49a7,7,0,0,0-7-6.5h-6a7,7,0,0,0-7,6.5H2a1,1,0,0,0-1,1V19.5a.5.5,0,0,0,.5.5H2v1.5a.5.5,0,0,0,.5.5h3a.5.5,0,0,0,.5-.5V20H19v1.5a.5.5,0,0,0,.5.5h3a.5.5,0,0,0,.5-.5V20h.5a.5.5,0,0,0,.5-.5V11A1,1,0,0,0,23,10ZM9.49,4.5h6a6,6,0,0,1,6,5.5H20a1,1,0,0,0-1,1l0,4L6,15V11a1,1,0,0,0-1-1H3.52A6,6,0,0,1,9.49,4.5ZM5,21H3V20H5Zm17,0H20V20h2Zm.5-2H2l0-8,3,0V15a1,1,0,0,0,1,1H19a1,1,0,0,0,1-1l0-4H23l0,8Z"
+       id="path1602"
+       style="fill:#4d4d4d" />
+    <path
+       class="cls-1"
+       d="M8.52,9a.5.5,0,0,0,0-1h0A.49.49,0,0,0,8,8.5.5.5,0,0,0,8.52,9Z"
+       id="path1604"
+       style="fill:#4d4d4d" />
+    <path
+       class="cls-1"
+       d="M12.52,9a.5.5,0,0,0,0-1h0a.49.49,0,0,0-.49.5A.5.5,0,0,0,12.52,9Z"
+       id="path1606"
+       style="fill:#4d4d4d" />
+    <path
+       class="cls-1"
+       d="M16.52,9a.5.5,0,0,0,0-1h0a.49.49,0,0,0-.49.5A.5.5,0,0,0,16.52,9Z"
+       id="path1608"
+       style="fill:#4d4d4d" />
+    <path
+       class="cls-1"
+       d="M8.52,12a.5.5,0,0,0,0-1h0a.49.49,0,0,0-.49.5A.5.5,0,0,0,8.52,12Z"
+       id="path1610"
+       style="fill:#4d4d4d" />
+    <path
+       class="cls-1"
+       d="M12.52,12a.5.5,0,0,0,0-1h0a.49.49,0,0,0-.49.5A.5.5,0,0,0,12.52,12Z"
+       id="path1612"
+       style="fill:#4d4d4d" />
+    <path
+       class="cls-1"
+       d="M16.52,12a.5.5,0,0,0,0-1h0a.49.49,0,0,0-.49.5A.5.5,0,0,0,16.52,12Z"
+       id="path1614"
+       style="fill:#4d4d4d" />
+  </g>
+</svg>

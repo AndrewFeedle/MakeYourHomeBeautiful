@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 25 25"
+   version="1.1"
+   id="svg922"
+   sodipodi:docname="chair-white.svg"
+   inkscape:version="1.2.1 (9c6d41e4, 2022-07-14)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview924"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="9.44"
+     inkscape:cx="12.5"
+     inkscape:cy="12.5"
+     inkscape:window-width="1280"
+     inkscape:window-height="456"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg922" />
+  <defs
+     id="defs909">
+    <style
+       id="style907">.cls-1{fill:#231f20;}</style>
+  </defs>
+  <g
+     id="chair"
+     style="fill:#ffffff">
+    <path
+       class="cls-1"
+       d="M20.5,13H19V9h.5a.5.5,0,0,0,.5-.5v-7a.5.5,0,0,0-.5-.5H5.5a.5.5,0,0,0-.5.5v7a.5.5,0,0,0,.5.5H6v4H4.5a.5.5,0,0,0-.5.5v3a.5.5,0,0,0,.5.5H5v6.5a.5.5,0,0,0,.5.5h2a.5.5,0,0,0,.5-.5V22h9v1.5a.5.5,0,0,0,.5.5h2a.5.5,0,0,0,.5-.5V17h.5a.5.5,0,0,0,.5-.5v-3A.5.5,0,0,0,20.5,13ZM18,13H17V9h1ZM9,13V9h7v4ZM6,2H19V8H6ZM7,9H8v4H7ZM7,23H6V17H7v6Zm10-6v2H8V17ZM8,21V20h9v1Zm11,2H18V17h1Zm1-7H5V14H20Z"
+       id="path911"
+       style="fill:#ffffff" />
+    <path
+       class="cls-1"
+       d="M7.52,4a.5.5,0,0,0,0-1h0A.49.49,0,0,0,7,3.5.5.5,0,0,0,7.52,4Z"
+       id="path913"
+       style="fill:#ffffff" />
+    <path
+       class="cls-1"
+       d="M7.52,7a.5.5,0,0,0,0-1h0A.49.49,0,0,0,7,6.5.5.5,0,0,0,7.52,7Z"
+       id="path915"
+       style="fill:#ffffff" />
+    <path
+       class="cls-1"
+       d="M17.52,4a.5.5,0,0,0,0-1h0a.49.49,0,0,0-.49.5A.5.5,0,0,0,17.52,4Z"
+       id="path917"
+       style="fill:#ffffff" />
+    <path
+       class="cls-1"
+       d="M17.52,7a.5.5,0,0,0,0-1h0a.49.49,0,0,0-.49.5A.5.5,0,0,0,17.52,7Z"
+       id="path919"
+       style="fill:#ffffff" />
+  </g>
+</svg>

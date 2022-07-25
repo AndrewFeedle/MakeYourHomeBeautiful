@@ -19,12 +19,15 @@ struct FirebaseManager{
                 let errorDescription = error.localizedDescription
                 if errorDescription.contains("There is no user record corresponding to this"){
                     data["error"] = "Пользователя с такой почтой и паролем не существует"
+                }else if errorDescription.contains("The password is invalid or the user does not have a password"){
+                    data["error"] = "Неверный пароль"
                 }else{
                     data["error"] = errorDescription
                 }
             }
             else{
                 data["uid"] = authDataResault?.user.uid
+                CryptoSnippets.saveUsersLoginAndPassword(email: email, password:password) // Сохранение пароля
             }
 
             NotificationCenter.default.post(name: Notification.Name("logInComplition"), object: self, userInfo: data)

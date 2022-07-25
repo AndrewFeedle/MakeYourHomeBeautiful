@@ -9,47 +9,57 @@
 /* Begin PBXBuildFile section */
 		AC4EEB3E28871E1F00423750 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4EEB3D28871E1F00423750 /* RegisterViewModel.swift */; };
 		AC4EEB422887256F00423750 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4EEB412887256F00423750 /* Constants.swift */; };
-		AC4EEB452887304300423750 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4EEB442887304300423750 /* HomeViewController.swift */; };
+		AC4EEB472889EC0400423750 /* CryptoSnippets.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4EEB462889EC0400423750 /* CryptoSnippets.swift */; };
+		AC4EEB49288B45EE00423750 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4EEB48288B45EE00423750 /* Observable.swift */; };
+		AC4EEB4D288C873400423750 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4EEB4C288C873400423750 /* HomeViewController.swift */; };
+		AC4EEB52288D622200423750 /* BookmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4EEB51288D622200423750 /* BookmarkViewController.swift */; };
+		AC4EEB54288D623400423750 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4EEB53288D623400423750 /* NotificationsViewController.swift */; };
+		AC4EEB56288D624100423750 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4EEB55288D624100423750 /* AccountViewController.swift */; };
+		AC4EEB5E288DD03B00423750 /* ChipViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4EEB5C288DD03B00423750 /* ChipViewCell.swift */; };
+		AC4EEB62288DF69200423750 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC4EEB61288DF69200423750 /* Assets.xcassets */; };
+		AC4EEB64288F307900423750 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4EEB63288F307800423750 /* SceneDelegate.swift */; };
 		AC84A3302883499D00B52D86 /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC84A32F2883499D00B52D86 /* ForgotPasswordViewModel.swift */; };
 		ACC090502885E3DA00BEBA33 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC0904F2885E3DA00BEBA33 /* RegisterViewController.swift */; };
 		ACEFC4AB287B022900FB0B01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEFC4AA287B022900FB0B01 /* AppDelegate.swift */; };
-		ACEFC4AD287B022900FB0B01 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEFC4AC287B022900FB0B01 /* SceneDelegate.swift */; };
 		ACEFC4AF287B022900FB0B01 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEFC4AE287B022900FB0B01 /* LogInViewController.swift */; };
 		ACEFC4B2287B022900FB0B01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACEFC4B0287B022900FB0B01 /* Main.storyboard */; };
 		ACEFC4B7287B022D00FB0B01 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACEFC4B5287B022D00FB0B01 /* LaunchScreen.storyboard */; };
-		ACEFC4FC287B15CD00FB0B01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACEFC4C2287B09D500FB0B01 /* Assets.xcassets */; };
-		ACEFC4FF287CB73200FB0B01 /* DesignTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEFC4FE287CB73100FB0B01 /* DesignTemplate.swift */; };
+		ACEFC4FF287CB73200FB0B01 /* DesignSnippets.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEFC4FE287CB73100FB0B01 /* DesignSnippets.swift */; };
 		ACEFC506287F57E400FB0B01 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEFC505287F57E400FB0B01 /* ForgotPasswordViewController.swift */; };
 		ACEFC50E2881EE5E00FB0B01 /* LogInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEFC50D2881EE5D00FB0B01 /* LogInViewModel.swift */; };
 		ACEFC5102882061E00FB0B01 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ACEFC50F2882061E00FB0B01 /* GoogleService-Info.plist */; };
 		ACEFC5132882097000FB0B01 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = ACEFC5122882097000FB0B01 /* FirebaseAuth */; };
 		ACEFC5152882097000FB0B01 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = ACEFC5142882097000FB0B01 /* FirebaseFirestore */; };
 		ACEFC51728820A4E00FB0B01 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEFC51628820A4E00FB0B01 /* FirebaseManager.swift */; };
-		ACEFC51E288215F000FB0B01 /* LoginAlertDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEFC51D288215F000FB0B01 /* LoginAlertDictionary.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AC4EEB3D28871E1F00423750 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		AC4EEB412887256F00423750 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		AC4EEB442887304300423750 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		AC4EEB462889EC0400423750 /* CryptoSnippets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoSnippets.swift; sourceTree = "<group>"; };
+		AC4EEB48288B45EE00423750 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		AC4EEB4C288C873400423750 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		AC4EEB51288D622200423750 /* BookmarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewController.swift; sourceTree = "<group>"; };
+		AC4EEB53288D623400423750 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
+		AC4EEB55288D624100423750 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		AC4EEB5C288DD03B00423750 /* ChipViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipViewCell.swift; sourceTree = "<group>"; };
+		AC4EEB61288DF69200423750 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AC4EEB63288F307800423750 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		AC84A32F2883499D00B52D86 /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
 		ACC0904F2885E3DA00BEBA33 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		ACEFC4A7287B022900FB0B01 /* Make home beautiful.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Make home beautiful.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACEFC4AA287B022900FB0B01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		ACEFC4AC287B022900FB0B01 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		ACEFC4AE287B022900FB0B01 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		ACEFC4B1287B022900FB0B01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ACEFC4B6287B022D00FB0B01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ACEFC4B8287B022D00FB0B01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ACEFC4C2287B09D500FB0B01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../Downloads/AppIcons/Assets.xcassets; sourceTree = "<group>"; };
-		ACEFC4FE287CB73100FB0B01 /* DesignTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignTemplate.swift; sourceTree = "<group>"; };
+		ACEFC4FE287CB73100FB0B01 /* DesignSnippets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSnippets.swift; sourceTree = "<group>"; };
 		ACEFC500287CBAA100FB0B01 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		ACEFC501287CBAA100FB0B01 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		ACEFC505287F57E400FB0B01 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		ACEFC50D2881EE5D00FB0B01 /* LogInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewModel.swift; sourceTree = "<group>"; };
 		ACEFC50F2882061E00FB0B01 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		ACEFC51628820A4E00FB0B01 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
-		ACEFC51D288215F000FB0B01 /* LoginAlertDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAlertDictionary.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,9 +78,34 @@
 		AC4EEB432887302D00423750 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				AC4EEB442887304300423750 /* HomeViewController.swift */,
+				AC4EEB4C288C873400423750 /* HomeViewController.swift */,
+				AC4EEB5C288DD03B00423750 /* ChipViewCell.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		AC4EEB4E288D61EE00423750 /* Bookmark */ = {
+			isa = PBXGroup;
+			children = (
+				AC4EEB51288D622200423750 /* BookmarkViewController.swift */,
+			);
+			path = Bookmark;
+			sourceTree = "<group>";
+		};
+		AC4EEB4F288D61F900423750 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				AC4EEB53288D623400423750 /* NotificationsViewController.swift */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
+		AC4EEB50288D620700423750 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				AC4EEB55288D624100423750 /* AccountViewController.swift */,
+			);
+			path = Account;
 			sourceTree = "<group>";
 		};
 		ACC0904E2885E3C500BEBA33 /* Register */ = {
@@ -106,11 +141,11 @@
 				ACEFC4C4287B0A3000FB0B01 /* Utilities */,
 				ACEFC4B0287B022900FB0B01 /* Main.storyboard */,
 				ACEFC4B5287B022D00FB0B01 /* LaunchScreen.storyboard */,
+				AC4EEB63288F307800423750 /* SceneDelegate.swift */,
 				ACEFC4AA287B022900FB0B01 /* AppDelegate.swift */,
-				ACEFC4AC287B022900FB0B01 /* SceneDelegate.swift */,
-				ACEFC4C2287B09D500FB0B01 /* Assets.xcassets */,
 				ACEFC4B8287B022D00FB0B01 /* Info.plist */,
 				ACEFC50F2882061E00FB0B01 /* GoogleService-Info.plist */,
+				AC4EEB61288DF69200423750 /* Assets.xcassets */,
 			);
 			path = "Make home beautiful";
 			sourceTree = "<group>";
@@ -119,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				ACEFC51628820A4E00FB0B01 /* FirebaseManager.swift */,
+				AC4EEB48288B45EE00423750 /* Observable.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -126,6 +162,9 @@
 		ACEFC502287F570F00FB0B01 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				AC4EEB50288D620700423750 /* Account */,
+				AC4EEB4F288D61F900423750 /* Notifications */,
+				AC4EEB4E288D61EE00423750 /* Bookmark */,
 				AC4EEB432887302D00423750 /* Home */,
 				ACC0904E2885E3C500BEBA33 /* Register */,
 				ACEFC503287F576D00FB0B01 /* Log in */,
@@ -139,6 +178,7 @@
 			children = (
 				ACEFC4AE287B022900FB0B01 /* LogInViewController.swift */,
 				ACEFC50D2881EE5D00FB0B01 /* LogInViewModel.swift */,
+				AC4EEB462889EC0400423750 /* CryptoSnippets.swift */,
 			);
 			path = "Log in";
 			sourceTree = "<group>";
@@ -155,8 +195,7 @@
 		ACEFC51828820D1300FB0B01 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				ACEFC4FE287CB73100FB0B01 /* DesignTemplate.swift */,
-				ACEFC51D288215F000FB0B01 /* LoginAlertDictionary.swift */,
+				ACEFC4FE287CB73100FB0B01 /* DesignSnippets.swift */,
 				AC4EEB412887256F00423750 /* Constants.swift */,
 			);
 			path = Common;
@@ -229,8 +268,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACEFC4B7287B022D00FB0B01 /* LaunchScreen.storyboard in Resources */,
-				ACEFC4FC287B15CD00FB0B01 /* Assets.xcassets in Resources */,
 				ACEFC4B2287B022900FB0B01 /* Main.storyboard in Resources */,
+				AC4EEB62288DF69200423750 /* Assets.xcassets in Resources */,
 				ACEFC5102882061E00FB0B01 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -243,18 +282,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACEFC4AF287B022900FB0B01 /* LogInViewController.swift in Sources */,
-				ACEFC4FF287CB73200FB0B01 /* DesignTemplate.swift in Sources */,
+				ACEFC4FF287CB73200FB0B01 /* DesignSnippets.swift in Sources */,
 				ACEFC51728820A4E00FB0B01 /* FirebaseManager.swift in Sources */,
 				ACEFC506287F57E400FB0B01 /* ForgotPasswordViewController.swift in Sources */,
+				AC4EEB5E288DD03B00423750 /* ChipViewCell.swift in Sources */,
+				AC4EEB52288D622200423750 /* BookmarkViewController.swift in Sources */,
 				ACEFC50E2881EE5E00FB0B01 /* LogInViewModel.swift in Sources */,
+				AC4EEB4D288C873400423750 /* HomeViewController.swift in Sources */,
 				ACC090502885E3DA00BEBA33 /* RegisterViewController.swift in Sources */,
+				AC4EEB56288D624100423750 /* AccountViewController.swift in Sources */,
 				AC84A3302883499D00B52D86 /* ForgotPasswordViewModel.swift in Sources */,
-				ACEFC51E288215F000FB0B01 /* LoginAlertDictionary.swift in Sources */,
+				AC4EEB64288F307900423750 /* SceneDelegate.swift in Sources */,
 				AC4EEB3E28871E1F00423750 /* RegisterViewModel.swift in Sources */,
 				ACEFC4AB287B022900FB0B01 /* AppDelegate.swift in Sources */,
-				ACEFC4AD287B022900FB0B01 /* SceneDelegate.swift in Sources */,
-				AC4EEB452887304300423750 /* HomeViewController.swift in Sources */,
+				AC4EEB472889EC0400423750 /* CryptoSnippets.swift in Sources */,
+				AC4EEB49288B45EE00423750 /* Observable.swift in Sources */,
 				AC4EEB422887256F00423750 /* Constants.swift in Sources */,
+				AC4EEB54288D623400423750 /* NotificationsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +455,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Make home beautiful/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Сделай дом красивым";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -441,6 +486,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Make home beautiful/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Сделай дом красивым";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

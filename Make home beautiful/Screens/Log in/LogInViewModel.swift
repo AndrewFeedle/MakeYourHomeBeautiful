@@ -6,52 +6,55 @@
 //
 import Foundation
 
-protocol LogInDelegate{
-    func presentErrorAlert(title:String, message:String)
-    func pushToHome(uid:String)
-}
-
-class LogInViewModel{
-    var delegate: LogInDelegate?
+final class LogInViewModel{
     
     // обработка авторизации
     func logIn(email:String, password:String){
         // Проверка заполненности полей
         let errorTitle = "Ошибка входа"
-        if email.isEmpty{
-            delegate?.presentErrorAlert(title: errorTitle, message: "Почта не должна быть пустой")
+        if email == ""{
+            NotificationCenter.default.post(name: Notification.Name("presentErrorAlert"), object: self, userInfo: ["title":errorTitle,"message":"Почта не должна быть пустой"])
             return
         }
         let emailPredicate = NSPredicate(format:"SELF MATCHES %@", Constants.emailPredicateFormat)
         if !emailPredicate.evaluate(with: email){
-            delegate?.presentErrorAlert(title: errorTitle, message: "Неверный формат почты")
+            NotificationCenter.default.post(name: Notification.Name("presentErrorAlert"), object: self, userInfo: ["title":errorTitle,"message":"Неверный формат почты"])
             return
         }
-        if password.isEmpty{
-            delegate?.presentErrorAlert(title: errorTitle, message: "Пароль не должен быть пустым")
+        if password == ""{
+            NotificationCenter.default.post(name: Notification.Name("presentErrorAlert"), object: self, userInfo: ["title":errorTitle,"message":"Пароль не должен быть пустым"])
             return
         }
         if password.count < 6{
-            delegate?.presentErrorAlert(title: errorTitle, message: "Длина пароля должна быть не менее 6 символов")
+            NotificationCenter.default.post(name: Notification.Name("presentErrorAlert"), object: self, userInfo: ["title":errorTitle,"message":"Длина пароля должна быть не менее 6 символов"])
             return
         }
         
         // Попытка войти
         NotificationCenter.default.addObserver(self, selector: #selector(logInComplition(_:)), name: Notification.Name("logInComplition"), object: nil)
         FirebaseManager.authWithEmail(email: email, password: password)
-        
-
     }
     
     // Обработка авторизации завершение
-    @objc func logInComplition(_ notification: Notification){
+    @objc private func logInComplition(_ notification: Notification){
         NotificationCenter.default.removeObserver(self, name: Notification.Name("logInComplition"), object: nil)
         let errorMessage = notification.userInfo!["error"] as! String
         if errorMessage != ""{
-            delegate?.presentErrorAlert(title: "Ошибка входа", message: errorMessage)
+            NotificationCenter.default.post(name: Notification.Name("presentErrorAlert"), object: self, userInfo: ["title":"Ошибка входа","message":errorMessage])
         }
         else{
-            delegate?.pushToHome(uid: notification.userInfo!["uid"] as! String)
+            NotificationCenter.default.post(name: Notification.Name("pushToHome"), object: self, userInfo: ["uid":notification.userInfo!["uid"] as! String])
+        }
+    }
+    
+    // Попытка получить сохраненные данные пользователя и войти
+    func tryLogIn(){
+    let result:[String:String] = CryptoSnippets.getUsersLoginAndPassword()
+        if result["error"] == ""{
+            NotificationCenter.default.addObserver(self, selector: #selector(logInComplition(_:)), name: Notification.Name("logInComplition"), object: nil)
+            FirebaseManager.authWithEmail(email: result["email"]!, password: result["password"]!)
+        }else{
+            NotificationCenter.default.post(name: Notification.Name("setScrollViewHidden"), object: self, userInfo: ["hide":false])
         }
     }
 }

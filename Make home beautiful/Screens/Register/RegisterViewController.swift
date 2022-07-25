@@ -8,7 +8,7 @@
 import UIKit
 
 class RegisterViewController: UIViewController {
-
+    
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var registerButton: UIButton!
@@ -24,30 +24,79 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet var mainView: UIView!
-    private var viewModel = RegisterViewModel()
+    private lazy var viewModel = RegisterViewModel()
     private var uid:String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.hideKeyboardWhenTappedAround()
-        DesignTemplate.addShadow(object: centralUIView) // Добавляем тень для
-        DesignTemplate.addShadow(object: registerButton) // Добавляем тень для кнопки "Войти"
+        self.hideKeyboardWhenTappedAround()// Скрытие клавиатуры при нажатии куда-либо еще
+        
+        DesignSnippets.addShadow(object: centralUIView) // Добавляем тень для
+        DesignSnippets.addShadow(object: registerButton) // Добавляем тень для кнопки "Войти"
+        
         //Добавляет наблюдателя за появлением клавиатуры
         NotificationCenter.default.addObserver(self,selector: #selector(keyboardWillShow(notification:)),name: UIResponder.keyboardWillShowNotification, object: nil)
+        
         //Добавляет наблюдателя за скрытием клавиатуры
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)),name: UIResponder.keyboardWillHideNotification,object: nil)
+        
         nameTextField.delegate = self
         emailTextField.delegate = self
         passwordTextField.delegate = self
         passwordReTextField.delegate = self
-        viewModel.delegate = self
+    }
+    
+    //При закрытии формы
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self)
+        super.viewWillDisappear(animated)
     }
     
     // Нажатие на кнопку зарегистрироваться
-    @IBAction func registerButtonPressed(_ sender: UIButton) {
+    @IBAction func registerButtonPressed(_ sender: UIButton){
         mainView.isUserInteractionEnabled = false
         activityIndicator.startAnimating()
-        viewModel.registerNewUser(name: nameTextField.text ?? "", email: emailTextField.text ?? "", password: passwordTextField.text ?? "", passwordRe: passwordReTextField.text ?? "")
+        setRegisterObservers()
+        let nameText = nameTextField.text ?? ""
+        let emailText = emailTextField.text ?? ""
+        let passwordText = passwordTextField.text ?? ""
+        let passwordReText = passwordReTextField.text ?? ""
+        DispatchQueue.global(qos: DispatchQoS.QoSClass.userInitiated).async{ [self] in
+            viewModel.registerNewUser(name: nameText, email: emailText, password: passwordText, passwordRe: passwordReText)}
+    }
+    
+    // Установка наблюдателей при попытке зарегистрироваться
+    private func setRegisterObservers(){
+        NotificationCenter.default.addObserver(self, selector: #selector(presentErrorAlert(_:)), name: Notification.Name("presentErrorAlert"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(pushToHome(_:)), name: Notification.Name("pushToHome"), object: nil)
+    }
+    
+    // Показывает ошибку
+    @objc private func presentErrorAlert(_ notification: Notification) {
+        DispatchQueue.main.async {[self] in
+            NotificationCenter.default.removeObserver(self)
+            let title = notification.userInfo!["title"] as? String
+            let message = notification.userInfo!["message"] as? String
+            mainView.isUserInteractionEnabled = true
+            activityIndicator.stopAnimating()
+            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    // При удачной регистрации перемещает на главный экран
+    @objc private func pushToHome(_ notification: Notification){
+        DispatchQueue.main.async{[self] in
+            NotificationCenter.default.removeObserver(self)
+            mainView.isUserInteractionEnabled = true
+            activityIndicator.stopAnimating()
+            nameTextField.text = ""
+            emailTextField.text = ""
+            passwordTextField.text = ""
+            passwordReTextField.text = ""
+            performSegue(withIdentifier: "fromRegisterToHome", sender: self)
+        }
     }
     
     // Нажатие на кнопку скрыть пароль
@@ -77,7 +126,7 @@ class RegisterViewController: UIViewController {
     @IBAction func alreadyHaveAccountPressed(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
     }
-
+    
     // Перед переходом на другой экран
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Переход на экран Домой
@@ -102,13 +151,13 @@ extension RegisterViewController: UITextFieldDelegate{
             }
         }
         else if textField == passwordTextField{
-        UIView.animate(withDuration: 0.3) {
-            self.divider3.backgroundColor = UIColor.label
+            UIView.animate(withDuration: 0.3) {
+                self.divider3.backgroundColor = UIColor.label
             }
         }
         else{
             UIView.animate(withDuration: 0.3) {
-        self.divider4.backgroundColor = UIColor.label
+                self.divider4.backgroundColor = UIColor.label
             }
         }
     }
@@ -117,22 +166,23 @@ extension RegisterViewController: UITextFieldDelegate{
     func textFieldDidEndEditing(_ textField: UITextField) {
         if textField == nameTextField{
             UIView.animate(withDuration: 0.3) {
-                self.divider1.backgroundColor = UIColor.lightGray
+                self.divider1.backgroundColor = UIColor.systemGray
             }
         }else if textField == emailTextField{
             UIView.animate(withDuration: 0.3) {
-                self.divider2.backgroundColor = UIColor.lightGray
+                self.divider2.backgroundColor = UIColor.systemGray
             }
         }
         else if textField == passwordTextField{
-        UIView.animate(withDuration: 0.3) {
-            self.divider3.backgroundColor = UIColor.lightGray
+            UIView.animate(withDuration: 0.3) {
+                self.divider3.backgroundColor = UIColor.systemGray
             }
         }
         else{
             UIView.animate(withDuration: 0.3) {
-        self.divider4.backgroundColor = UIColor.lightGray
+                self.divider4.backgroundColor = UIColor.systemGray
             }
+            
         }
     }
     
@@ -153,18 +203,18 @@ extension RegisterViewController: UITextFieldDelegate{
 
 //MARK: - Скрытие клавиатуры и регулировка положения view
 extension RegisterViewController {
-    func hideKeyboardWhenTappedAround() {
+    private func hideKeyboardWhenTappedAround() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(RegisterViewController.dismissKeyboard))
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
     }
     
-    @objc func dismissKeyboard() {
+    @objc private func dismissKeyboard() {
         view.endEditing(true)
     }
     
     // При появлении клавиатуры
-    @objc func keyboardWillShow(notification: NSNotification) {
+    @objc private func keyboardWillShow(notification: NSNotification) {
         let userInfo: NSDictionary = notification.userInfo! as NSDictionary
         let keyboardInfo = userInfo[UIResponder.keyboardFrameBeginUserInfoKey] as! NSValue
         let keyboardSize = keyboardInfo.cgRectValue.size
@@ -172,29 +222,10 @@ extension RegisterViewController {
         scrollView.contentInset = contentInsets
         scrollView.scrollIndicatorInsets = contentInsets
     }
-
+    
     // При скрытии клавиатуры
-    @objc func keyboardWillHide(notification: NSNotification) {
+    @objc private func keyboardWillHide(notification: NSNotification) {
         scrollView.contentInset = .zero
         scrollView.scrollIndicatorInsets = .zero
-    }
-}
-
-//MARK: - LogInDelegate
-extension RegisterViewController: RegisterViewDelegate{    
-    // Показывает ошибку
-    func presentErrorAlert(title: String, message: String) {
-        mainView.isUserInteractionEnabled = true
-        activityIndicator.stopAnimating()
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
-    }
-    
-    // При удачной регистрации перемещает на главный экран
-    func pushToHome(uid:String){
-        mainView.isUserInteractionEnabled = true
-        activityIndicator.stopAnimating()
-        performSegue(withIdentifier: "fromRegisterToHome", sender: self)
     }
 }

@@ -16,17 +16,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoadingBackground" translatesAutoresizingMaskIntoConstraints="NO" id="eUv-wa-5fn">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch-screen" translatesAutoresizingMaskIntoConstraints="NO" id="eUv-wa-5fn">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="СДЕЛАЙ СВОЙ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pfq-DF-CHl">
-                                <rect key="frame" x="30" y="255" width="364" height="27"/>
+                                <rect key="frame" x="30" y="261" width="364" height="27"/>
                                 <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="24"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Лучшее доступное место, где вы откроете для себя самую лучшую мебель и сделаете ваш дом красивее" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="gV9-dS-gdQ">
-                                <rect key="frame" x="48" y="416" width="318.5" height="64.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Лучшее доступное место, где вы откроете для себя самую лучшую мебель и сделаете ваш дом красивее" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="gV9-dS-gdQ">
+                                <rect key="frame" x="40" y="416" width="334" height="64.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" systemColor="systemGrayColor"/>
                                 <nil key="highlightedColor"/>
@@ -45,7 +45,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GJV-rE-9qj" secondAttribute="trailing" constant="30" id="DhO-ZG-Qkf"/>
                             <constraint firstItem="eUv-wa-5fn" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="Gy0-rU-3jP"/>
                             <constraint firstAttribute="trailing" secondItem="eUv-wa-5fn" secondAttribute="trailing" id="MDz-Lt-5dm"/>
-                            <constraint firstItem="GJV-rE-9qj" firstAttribute="top" secondItem="pfq-DF-CHl" secondAttribute="bottom" constant="26" id="QPG-vC-dAS"/>
+                            <constraint firstItem="GJV-rE-9qj" firstAttribute="top" secondItem="pfq-DF-CHl" secondAttribute="bottom" constant="20" id="QPG-vC-dAS"/>
                             <constraint firstAttribute="bottom" secondItem="eUv-wa-5fn" secondAttribute="bottom" id="Wgo-IU-PHp"/>
                             <constraint firstItem="gV9-dS-gdQ" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="b8H-pb-NZE"/>
                             <constraint firstItem="GJV-rE-9qj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="iok-Vn-ksJ"/>
@@ -64,7 +64,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="LoadingBackground" width="375" height="812"/>
+        <image name="launch-screen" width="375" height="812"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 25 25"
+   version="1.1"
+   id="svg1435"
+   sodipodi:docname="side-table-gray.svg"
+   inkscape:version="1.2.1 (9c6d41e4, 2022-07-14)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1437"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="9.44"
+     inkscape:cx="12.5"
+     inkscape:cy="12.5"
+     inkscape:window-width="1280"
+     inkscape:window-height="456"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg1435" />
+  <defs
+     id="defs1430">
+    <style
+       id="style1428">.cls-1{fill:#231f20;}</style>
+  </defs>
+  <g
+     id="side_table"
+     data-name="side table"
+     style="fill:#4d4d4d">
+    <path
+       class="cls-1"
+       d="M22,4H3A2,2,0,0,0,3,8V21.5a.5.5,0,0,0,.5.5h1a.51.51,0,0,0,.5-.43L6.65,10h11.7L20,21.57a.51.51,0,0,0,.5.43h1a.5.5,0,0,0,.5-.5V8a2,2,0,0,0,0-4ZM4.07,21H4V8H5.92ZM6.79,9l.14-1H18.07l.14,1ZM21,21h-.07L19.08,8H21ZM22,7H3A1,1,0,0,1,3,5H22a1,1,0,0,1,0,2Z"
+       id="path1432"
+       style="fill:#4d4d4d" />
+  </g>
+</svg>

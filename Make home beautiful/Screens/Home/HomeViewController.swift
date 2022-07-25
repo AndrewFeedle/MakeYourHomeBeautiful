@@ -2,28 +2,39 @@
 //  HomeViewController.swift
 //  Make home beautiful
 //
-//  Created by Feedle on 19.07.2022.
+//  Created by Feedle on 23.07.2022.
 //
 
 import UIKit
 
 class HomeViewController: UIViewController {
 
+    @IBOutlet var backgroundView: UIView!
+    @IBOutlet weak var chipCollectionView: UICollectionView!
+    let chips: [String] = ["1","2"]
     var uid:String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Меняет стиль иконки таббара при выделении
+        tabBarItem.selectedImage = UIImage(systemName: "house.fill")
+        // Добавляет градиент на задний фон
+        DesignSnippets.addGradientToBackground(view: backgroundView)
+        chipCollectionView.dataSource = self
+//        chipCollectionView.register(UINib(nibName: "chip", bundle: nil), forCellWithReuseIdentifier: "chip")
+    }
+}
+
+extension HomeViewController: UICollectionViewDataSource{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 1
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        return chipCollectionView.dequeueReusableCell(withReuseIdentifier: "chip", for: indexPath) as! ChipViewCell
     }
-    */
-
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return chips.count + 10
+    }
 }
