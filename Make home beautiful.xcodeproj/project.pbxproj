@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC4654C8289045E300780FC3 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4654C7289045E300780FC3 /* Filter.swift */; };
+		AC4654CA2890471000780FC3 /* Filters.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4654C92890471000780FC3 /* Filters.swift */; };
 		AC4EEB3E28871E1F00423750 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4EEB3D28871E1F00423750 /* RegisterViewModel.swift */; };
 		AC4EEB422887256F00423750 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4EEB412887256F00423750 /* Constants.swift */; };
 		AC4EEB472889EC0400423750 /* CryptoSnippets.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4EEB462889EC0400423750 /* CryptoSnippets.swift */; };
@@ -34,6 +36,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AC4654C7289045E300780FC3 /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
+		AC4654C92890471000780FC3 /* Filters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filters.swift; sourceTree = "<group>"; };
 		AC4EEB3D28871E1F00423750 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		AC4EEB412887256F00423750 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AC4EEB462889EC0400423750 /* CryptoSnippets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoSnippets.swift; sourceTree = "<group>"; };
@@ -80,6 +84,8 @@
 			children = (
 				AC4EEB4C288C873400423750 /* HomeViewController.swift */,
 				AC4EEB5C288DD03B00423750 /* ChipViewCell.swift */,
+				AC4654C7289045E300780FC3 /* Filter.swift */,
+				AC4654C92890471000780FC3 /* Filters.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -286,10 +292,12 @@
 				ACEFC51728820A4E00FB0B01 /* FirebaseManager.swift in Sources */,
 				ACEFC506287F57E400FB0B01 /* ForgotPasswordViewController.swift in Sources */,
 				AC4EEB5E288DD03B00423750 /* ChipViewCell.swift in Sources */,
+				AC4654CA2890471000780FC3 /* Filters.swift in Sources */,
 				AC4EEB52288D622200423750 /* BookmarkViewController.swift in Sources */,
 				ACEFC50E2881EE5E00FB0B01 /* LogInViewModel.swift in Sources */,
 				AC4EEB4D288C873400423750 /* HomeViewController.swift in Sources */,
 				ACC090502885E3DA00BEBA33 /* RegisterViewController.swift in Sources */,
+				AC4654C8289045E300780FC3 /* Filter.swift in Sources */,
 				AC4EEB56288D624100423750 /* AccountViewController.swift in Sources */,
 				AC84A3302883499D00B52D86 /* ForgotPasswordViewModel.swift in Sources */,
 				AC4EEB64288F307900423750 /* SceneDelegate.swift in Sources */,

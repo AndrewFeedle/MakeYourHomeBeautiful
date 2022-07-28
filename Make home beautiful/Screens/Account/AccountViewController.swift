@@ -16,7 +16,12 @@ class AccountViewController: UIViewController {
         // Меняет стиль иконки таббара при выделении
         tabBarItem.selectedImage = UIImage(systemName: "person.fill")
         // Добавляет градиент на задний фон
-        DesignSnippets.addGradientToBackground(view: backgroundView)
+        DesignSnippets.addGradientToBackground(view: backgroundView, darkMode: traitCollection.userInterfaceStyle == .dark ? false:true)
+    }
+    
+    // При смене темы
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        DesignSnippets.addGradientToBackground(view: backgroundView, darkMode: previousTraitCollection?.userInterfaceStyle == .light ? false:true)
     }
     
 

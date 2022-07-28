@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "furniture.svg",
+      "filename" : "furniture-white.svg",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -12,7 +12,7 @@
           "value" : "dark"
         }
       ],
-      "filename" : "furniture-white.svg",
+      "filename" : "furniture.svg",
       "idiom" : "universal",
       "scale" : "1x"
     },

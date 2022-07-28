@@ -29,12 +29,21 @@ struct DesignSnippets{
     }
     
     // Добавляет градиент на задний фон
-    static func addGradientToBackground(view:UIView){
+    static func addGradientToBackground(view:UIView, darkMode:Bool){
         let gradientlayer = CAGradientLayer()
+        let secondColor = darkMode ?
+            UIColor(red: 245.0/255.0, green: 245.0/255.0, blue: 245.0/255.0, alpha: 1.0).cgColor:
+        UIColor(red: 50.0/255.0, green: 50.0/255.0, blue: 50.0/255.0, alpha: 1.0).cgColor
         gradientlayer.frame.size = view.frame.size
-        gradientlayer.colors = [UIColor.systemBackground.cgColor, UIColor(red: 248.0/255.0, green: 248.0/255.0, blue: 248.0/255.0, alpha: 1.0).cgColor]
+        gradientlayer.colors = [UIColor.systemBackground.cgColor, secondColor]
         gradientlayer.startPoint = CGPoint(x: 0.0, y: 0.9)
         gradientlayer.endPoint = CGPoint(x: 0.0, y: 1.0)
-        view.layer.addSublayer(gradientlayer)
+        if view.layer.sublayers?.count ?? 0 > 0{
+            view.layer.replaceSublayer(view.layer.sublayers![0], with: gradientlayer)
+        }
+        else{
+            view.layer.addSublayer(gradientlayer)
+        }
+        
     }
 }

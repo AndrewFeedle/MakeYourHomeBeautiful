@@ -142,21 +142,21 @@ extension RegisterViewController: UITextFieldDelegate{
     // Начало редактирования текста
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if textField == nameTextField{
-            UIView.animate(withDuration: 0.3) {
+            UIView.animate(withDuration: Constants.animationDuration) {
                 self.divider1.backgroundColor = UIColor.label
             }
         }else if textField == emailTextField{
-            UIView.animate(withDuration: 0.3) {
+            UIView.animate(withDuration: Constants.animationDuration) {
                 self.divider2.backgroundColor = UIColor.label
             }
         }
         else if textField == passwordTextField{
-            UIView.animate(withDuration: 0.3) {
+            UIView.animate(withDuration: Constants.animationDuration) {
                 self.divider3.backgroundColor = UIColor.label
             }
         }
         else{
-            UIView.animate(withDuration: 0.3) {
+            UIView.animate(withDuration: Constants.animationDuration) {
                 self.divider4.backgroundColor = UIColor.label
             }
         }
@@ -165,21 +165,21 @@ extension RegisterViewController: UITextFieldDelegate{
     // Окончание редактирования текста
     func textFieldDidEndEditing(_ textField: UITextField) {
         if textField == nameTextField{
-            UIView.animate(withDuration: 0.3) {
+            UIView.animate(withDuration: Constants.animationDuration) {
                 self.divider1.backgroundColor = UIColor.systemGray
             }
         }else if textField == emailTextField{
-            UIView.animate(withDuration: 0.3) {
+            UIView.animate(withDuration: Constants.animationDuration) {
                 self.divider2.backgroundColor = UIColor.systemGray
             }
         }
         else if textField == passwordTextField{
-            UIView.animate(withDuration: 0.3) {
+            UIView.animate(withDuration: Constants.animationDuration) {
                 self.divider3.backgroundColor = UIColor.systemGray
             }
         }
         else{
-            UIView.animate(withDuration: 0.3) {
+            UIView.animate(withDuration: Constants.animationDuration) {
                 self.divider4.backgroundColor = UIColor.systemGray
             }
             

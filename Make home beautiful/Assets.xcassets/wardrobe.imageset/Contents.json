@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "wardrobe.svg",
+      "filename" : "wardrobe-white.svg",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -12,7 +12,7 @@
           "value" : "dark"
         }
       ],
-      "filename" : "wardrobe-white.svg",
+      "filename" : "wardrobe.svg",
       "idiom" : "universal",
       "scale" : "1x"
     },

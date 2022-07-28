@@ -107,14 +107,14 @@ extension ForgotPasswordViewController: UITextFieldDelegate{
     
     // Когда текстовое поле начали редактировать
     func textFieldDidBeginEditing(_ textField: UITextField) {
-            UIView.animate(withDuration: 0.3) {
+            UIView.animate(withDuration: Constants.animationDuration) {
                 self.divider.backgroundColor = UIColor.label
         }
     }
     
     // Когда текстовое поле закончили редактировать
     func textFieldDidEndEditing(_ textField: UITextField) {
-            UIView.animate(withDuration: 0.3) {
+            UIView.animate(withDuration: Constants.animationDuration) {
                 self.divider.backgroundColor = UIColor.systemGray
             }
     }

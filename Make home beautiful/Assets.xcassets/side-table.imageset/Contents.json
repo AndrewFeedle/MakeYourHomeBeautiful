@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "side-table.svg",
+      "filename" : "side-table-white.svg",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -12,7 +12,7 @@
           "value" : "dark"
         }
       ],
-      "filename" : "side-table-white.svg",
+      "filename" : "side-table.svg",
       "idiom" : "universal",
       "scale" : "1x"
     },

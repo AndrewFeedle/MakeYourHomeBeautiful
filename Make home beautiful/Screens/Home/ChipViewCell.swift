@@ -10,10 +10,10 @@ import UIKit
 class ChipViewCell: UICollectionViewCell {
 
     @IBOutlet weak var background: UIView!
-    @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-
 }

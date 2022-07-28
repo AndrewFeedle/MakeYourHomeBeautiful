@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "table.svg",
+      "filename" : "table-white.svg",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -12,7 +12,7 @@
           "value" : "dark"
         }
       ],
-      "filename" : "table-white.svg",
+      "filename" : "table.svg",
       "idiom" : "universal",
       "scale" : "1x"
     },

@@ -146,12 +146,12 @@ extension LogInViewController: UITextFieldDelegate{
     // Когда текстовое поле начали редактировать
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if emailTextField.isEditing{
-            UIView.animate(withDuration: 0.3) {
+            UIView.animate(withDuration: Constants.animationDuration) {
                 self.emailDivider.backgroundColor = UIColor.label
             }
         }
         else{
-            UIView.animate(withDuration: 0.3) {
+            UIView.animate(withDuration: Constants.animationDuration) {
                 self.passwordDivider.backgroundColor = UIColor.label
             }
         }
@@ -160,12 +160,12 @@ extension LogInViewController: UITextFieldDelegate{
     // Когда текстовое поле закончили редактировать
     func textFieldDidEndEditing(_ textField: UITextField) {
         if !emailTextField.isEditing{
-            UIView.animate(withDuration: 0.3) {
+            UIView.animate(withDuration: Constants.animationDuration) {
                 self.emailDivider.backgroundColor = UIColor.systemGray
             }
         }
         if !passwordTextField.isEditing{
-            UIView.animate(withDuration: 0.3) {
+            UIView.animate(withDuration: Constants.animationDuration) {
                 self.passwordDivider.backgroundColor = UIColor.systemGray
             }
         }
