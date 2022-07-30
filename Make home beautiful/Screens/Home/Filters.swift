@@ -7,6 +7,12 @@
 
 import Foundation
 
+struct Filter{
+    let text:String
+    let image:String
+    var isSelected = false
+}
+
 let filterMasive = [Filter(text: "Все", image: "furniture", isSelected: true),
                     Filter(text: "Шкафы", image: "wardrobe"),
                     Filter(text: "Тумбы", image: "side-table"),
